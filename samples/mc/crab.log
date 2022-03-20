@@ -1,0 +1,259 @@
+DEBUG 2022-03-17 23:33:48.135 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-17 23:33:48.135 UTC: 	 Running on: Linux lxplus791.cern.ch 3.10.0-1160.59.1.el7.x86_64 #1 SMP Wed Feb 23 16:47:03 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-17 23:33:48.135 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-17 23:33:48.136 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-17 23:33:48.136 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-17 23:33:48.137 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-17 23:33:48.140 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-17 23:33:48.141 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-17 23:33:48.141 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-17 23:33:48.144 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 00:09:30.105 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 00:09:30.105 UTC: 	 Running on: Linux lxplus791.cern.ch 3.10.0-1160.59.1.el7.x86_64 #1 SMP Wed Feb 23 16:47:03 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 00:09:30.105 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 00:09:30.106 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 00:09:30.107 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 00:09:30.108 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 00:09:30.109 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 00:09:30.109 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 00:09:30.109 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 00:09:30.116 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 00:35:10.997 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 00:35:10.997 UTC: 	 Running on: Linux lxplus791.cern.ch 3.10.0-1160.59.1.el7.x86_64 #1 SMP Wed Feb 23 16:47:03 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 00:35:10.997 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 00:35:10.998 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 00:35:10.998 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 00:35:10.999 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 00:35:11.004 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 00:35:11.004 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 00:35:11.005 UTC: 	 Caught ClientException exceptionhehe
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 00:35:11.007 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 00:36:08.014 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 00:36:08.014 UTC: 	 Running on: Linux lxplus791.cern.ch 3.10.0-1160.59.1.el7.x86_64 #1 SMP Wed Feb 23 16:47:03 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 00:36:08.014 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 00:36:08.015 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 00:36:08.016 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 00:36:08.016 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 00:36:08.016 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 00:36:08.017 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 00:36:08.017 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 00:36:08.019 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 09:40:45.105 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 09:40:45.105 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 09:40:45.105 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 09:40:45.105 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 09:40:45.109 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 09:40:45.109 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 09:40:45.114 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 09:40:45.116 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 09:40:45.116 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 09:40:45.123 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 09:57:30.077 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 09:57:30.077 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 09:57:30.077 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-03-18 09:57:30.079 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+DEBUG 2022-03-18 09:57:30.081 UTC: 	 Checking credentials
+DEBUG 2022-03-18 09:57:30.081 UTC: 	 Found proxy file /tmp/x509up_u147761
+DEBUG 2022-03-18 09:57:30.081 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2022-03-18 09:57:30.081 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u147761
+DEBUG 2022-03-18 09:57:30.855 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2022-03-18 09:57:30.855 UTC: 	 Getting proxy life time left
+DEBUG 2022-03-18 09:57:30.855 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u147761
+DEBUG 2022-03-18 09:57:31.500 UTC: 	 output : 689981
+689981
+
+ error: 
+ retcode : 0
+DEBUG 2022-03-18 09:57:31.500 UTC: 	 Proxy valid for 191:39:41 hours
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Command use: checkwrite
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Options use: ['--site=T2_CH_CSCS']
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Instance is None
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Server base url is None
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Retrieving username ...
+DEBUG 2022-03-18 09:57:31.501 UTC: 	 Retrieving username from CRIC...
+DEBUG 2022-03-18 09:57:32.241 UTC: 	 username is jodedra
+INFO 2022-03-18 09:57:32.241 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2022-03-18 09:57:32.242 UTC: 	 Validating LFN /store/user/jodedra...
+INFO 2022-03-18 09:57:32.242 UTC: 	 LFN /store/user/jodedra is valid.
+INFO 2022-03-18 09:57:32.278 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2022-03-18 09:57:32.279 UTC: 	 Will check write permission in /store/user/jodedra on site T2_CH_CSCS
+INFO 2022-03-18 09:57:34.775 UTC: 	 Will use PFN: rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/crab3checkwrite_20220318_105732.tmp
+INFO 2022-03-18 09:57:34.776 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20220318_105732 and copy (dummy) file crab3checkwrite_20220318_105732.tmp to /store/user/jodedra
+
+INFO 2022-03-18 09:57:34.781 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab3checkwrite_20220318_105732.tmp 'rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/crab3checkwrite_20220318_105732.tmp'
+INFO 2022-03-18 09:57:34.781 UTC: 	 Please wait...
+INFO 2022-03-18 09:57:35.391 UTC: 	 
+Successfully created directory crab3checkwrite_20220318_105732 and copied file crab3checkwrite_20220318_105732.tmp to /store/user/jodedra
+INFO 2022-03-18 09:57:35.392 UTC: 	 
+Attempting to delete file rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/crab3checkwrite_20220318_105732.tmp
+
+INFO 2022-03-18 09:57:35.392 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/crab3checkwrite_20220318_105732.tmp'
+INFO 2022-03-18 09:57:35.392 UTC: 	 Please wait...
+INFO 2022-03-18 09:57:35.826 UTC: 	 
+Successfully deleted file rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/crab3checkwrite_20220318_105732.tmp
+INFO 2022-03-18 09:57:35.827 UTC: 	 
+Attempting to delete directory rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/
+
+INFO 2022-03-18 09:57:35.827 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/'
+INFO 2022-03-18 09:57:35.827 UTC: 	 Please wait...
+INFO 2022-03-18 09:57:36.142 UTC: 	 
+Successfully deleted directory rucio 1.27.2
+davs://storage01.lcg.cscs.ch:2880//pnfs/lcg.cscs.ch/cms/trivcat/store/user/jodedra/crab3checkwrite_20220318_105732/
+INFO 2022-03-18 09:57:36.209 UTC: 	 
+Checkwrite Result:
+INFO 2022-03-18 09:57:36.209 UTC: 	 Success: Able to write in /store/user/jodedra on site T2_CH_CSCS
+DEBUG 2022-03-18 10:34:38.502 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 10:34:38.502 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 10:34:38.502 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 10:34:38.503 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 10:34:38.505 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 10:34:38.505 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 10:34:38.509 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 10:34:38.509 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 10:34:38.509 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 10:34:38.514 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 11:43:15.418 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 11:43:15.419 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 11:43:15.419 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 11:43:15.420 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 11:43:15.421 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 11:43:15.422 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 11:43:15.426 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 11:43:15.428 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 11:43:15.429 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 11:43:15.434 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-18 11:44:20.646 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 11:44:20.647 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 11:44:20.647 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 11:44:20.647 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 11:44:20.648 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 11:44:20.648 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 11:44:20.660 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-18 11:44:20.660 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-18 11:44:20.661 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW' already exists 
+Please change the requestName in the config file
+INFO 2022-03-18 11:44:20.663 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log

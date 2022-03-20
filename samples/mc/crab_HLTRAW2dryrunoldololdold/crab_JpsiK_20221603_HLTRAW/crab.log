@@ -1,0 +1,1727 @@
+DEBUG 2022-03-18 11:44:34.368 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-18 11:44:34.368 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-18 11:44:34.368 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-18 11:44:34.368 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-18 11:44:34.369 UTC: 	 Will use CRAB configuration file crab_step2.py
+DEBUG 2022-03-18 11:44:34.369 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-18 11:44:34.370 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-03-18 11:44:34.380 UTC: 	 Skipping proxy creation
+DEBUG 2022-03-18 11:44:34.520 UTC: 	 Command use: submit
+DEBUG 2022-03-18 11:44:34.521 UTC: 	 Options use: ['--proxy=/afs/cern.ch/user/j/jodedra/private/x509up_u147761', '-c', 'crab_step2.py', '--dryrun']
+DEBUG 2022-03-18 11:44:34.521 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2022-03-18 11:44:34.522 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlData_9e4fX --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=version" | tee /dev/stderr 
+DEBUG 2022-03-18 11:44:34.600 UTC: 	 output : {"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "py3.220218"]
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=version HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 19
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [19 bytes data]
+* upload completely sent off: 19 out of 19 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:44:34 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "b9e9d953ebda03e57a376ab381078e87e4cd4aa3"
+< Content-Length: 73
+< X-Rest-Time: 1925.707 us
+< CMS-Server-Time: D=9487 t=1647603874586560
+< 
+{ [5 bytes data]
+100    92  100    73  100    19   1553    404 --:--:-- --:--:-- --:--:--  1957
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "py3.220218"]
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 CRABClient version: v3.220210
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Instance is prod
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Command api workflow
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Started submission
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Working on /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:44:34.602 UTC: 	 Encoded data for curl request: subresource=backendurls
+DEBUG 2022-03-18 11:44:34.603 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDatam50NU2 --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=backendurls" | tee /dev/stderr 
+DEBUG 2022-03-18 11:44:34.763 UTC: 	 output : {"result": [
+ {"cacheSSL": "https://cmsweb.cern.ch/S3/crabcache_prod", "htcondorSchedds": {"crab3@vocms059.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/059", "weightfactor": 0}, "crab3@vocms068.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/068", "weightfactor": 1}, "crab3@vocms069.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/069", "weightfactor": 1}, "crab3@vocms0106.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0106", "weightfactor": 1}, "crab3@vocms0107.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0107", "weightfactor": 1}, "crab3@vocms0119.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0119", "weightfactor": 1}, "crab3@vocms0120.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0120", "weightfactor": 1}, "crab3@vocms0121.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0121", "weightfactor": 1}, "crab3@vocms0122.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0122", "weightfactor": 1}, "crab3@vocms0137.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0137", "weightfactor": 1}, "crab3@vocms0144.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0144", "weightfactor": 1}, "crab3@vocms0155.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0155", "weightfactor": 1}, "crab3@vocms0194.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0194", "weightfactor": 1}, "crab3@vocms0195.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0195", "weightfactor": 1}, "crab3@vocms0196.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0196", "weightfactor": 1}, "crab3@vocms0197.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0197", "weightfactor": 1}, "crab3@vocms0198.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0198", "weightfactor": 1}, "crab3@vocms0199.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0199", "weightfactor": 1}}, "asoConfig": [{"couchURL": "https://cmsweb.cern.ch/crabserver/prod", "couchDBName": "filetransfers"}], "htcondorPool": "cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=backendurls HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 23
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [23 bytes data]
+* upload completely sent off: 23 out of 23 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:44:34 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "33581c872b594825cd6b153efac3e8632410185f"
+< Content-Length: 2232
+< X-Rest-Time: 60905.218 us
+< CMS-Server-Time: D=93241 t=1647603874659600
+< 
+  1  2255    0     0  100    23      0    179 --:--:-- --:--:-- --:--:--   179{ [5 bytes data]
+100  2255  100  2232  100    23  16781    172 --:--:-- --:--:-- --:--:-- 16828
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ {"cacheSSL": "https://cmsweb.cern.ch/S3/crabcache_prod", "htcondorSchedds": {"crab3@vocms059.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/059", "weightfactor": 0}, "crab3@vocms068.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/068", "weightfactor": 1}, "crab3@vocms069.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/069", "weightfactor": 1}, "crab3@vocms0106.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0106", "weightfactor": 1}, "crab3@vocms0107.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0107", "weightfactor": 1}, "crab3@vocms0119.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0119", "weightfactor": 1}, "crab3@vocms0120.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0120", "weightfactor": 1}, "crab3@vocms0121.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0121", "weightfactor": 1}, "crab3@vocms0122.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0122", "weightfactor": 1}, "crab3@vocms0137.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0137", "weightfactor": 1}, "crab3@vocms0144.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0144", "weightfactor": 1}, "crab3@vocms0155.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0155", "weightfactor": 1}, "crab3@vocms0194.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0194", "weightfactor": 1}, "crab3@vocms0195.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0195", "weightfactor": 1}, "crab3@vocms0196.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0196", "weightfactor": 1}, "crab3@vocms0197.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0197", "weightfactor": 1}, "crab3@vocms0198.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0198", "weightfactor": 1}, "crab3@vocms0199.cern.ch": {"proxiedurl": "https://cmsweb.cern.ch:8443/scheddmon/0199", "weightfactor": 1}}, "asoConfig": [{"couchURL": "https://cmsweb.cern.ch/crabserver/prod", "couchDBName": "filetransfers"}], "htcondorPool": "cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"}
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:44:34.856 UTC: 	 Loading required information from the environment
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 Found CMSSW_11_2_2_patch1 for slc7_amd64_gcc900 with base /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 Loading required information from the environment
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 Found CMSSW_11_2_2_patch1 for slc7_amd64_gcc900 with base /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 UNIQUE NAME: tarUUID e98712a8-b441-4625-bb7d-700d29a63c3f 
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'crab_HLTRAW2dryrun'
+config.General.transferLogs = False
+config.General.requestName = 'JpsiK_20221603_HLTRAW'
+config.section_('JobType')
+config.JobType.psetName = 'EGM-Run3Winter21DRMiniAOD-00021_1_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.maxMemoryMB = 4000
+config.section_('Data')
+config.Data.inputDataset = '/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER'
+config.Data.outputDatasetTag = 'Spring22_HLTRAW'
+config.Data.publication = False
+config.Data.unitsPerJob = 4
+config.Data.inputDBS = 'phys03'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/jodedra/JpsiK_20221603_HLTRAW'
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CSCS'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2022-03-18 11:44:34.857 UTC: 	 self.config.JobType.psetName: EGM-Run3Winter21DRMiniAOD-00021_1_cfg.py
+INFO 2022-03-18 11:44:34.857 UTC: 	 Importing CMSSW configuration EGM-Run3Winter21DRMiniAOD-00021_1_cfg.py
+INFO 2022-03-18 11:44:49.528 UTC: 	 Finished importing CMSSW configuration EGM-Run3Winter21DRMiniAOD-00021_1_cfg.py
+DEBUG 2022-03-18 11:44:49.528 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/PSet.py
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 The following EDM output files will be collected: ['BPH-RunIIFall18GS-00180_1MiniAOD.root']
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 The following TFile output files will be collected: []
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 Loading required information from the environment
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 Found CMSSW_11_2_2_patch1 for slc7_amd64_gcc900 with base /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1
+DEBUG 2022-03-18 11:44:57.099 UTC: 	 Making tarball in /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/e98712a8-b441-4625-bb7d-700d29a63c3fdefault.tgz
+DEBUG 2022-03-18 11:44:57.100 UTC: 	 Checking directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/lib
+DEBUG 2022-03-18 11:44:57.100 UTC: 	 Adding directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/lib to tarball
+DEBUG 2022-03-18 11:44:57.104 UTC: 	 Checking directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/biglib
+DEBUG 2022-03-18 11:44:57.104 UTC: 	 Adding directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/biglib to tarball
+DEBUG 2022-03-18 11:44:57.105 UTC: 	 Checking directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/module
+DEBUG 2022-03-18 11:44:57.206 UTC: 	 Adding data directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/data to tarball
+DEBUG 2022-03-18 11:45:00.599 UTC: 	 Uploading archive /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/e98712a8-b441-4625-bb7d-700d29a63c3fdefault.tgz (2.451172.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2022-03-18 11:45:01.996 UTC: 	 Encoded data for curl request: tarballname=c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz&subresource=upload&objecttype=sandbox
+DEBUG 2022-03-18 11:45:02.026 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDatal0CUny --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/cache?tarballname=c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz&subresource=upload&objecttype=sandbox" | tee /dev/stderr 
+DEBUG 2022-03-18 11:45:02.134 UTC: 	 output : {"result": [
+ ""
+,{}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/cache?tarballname=c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz&subresource=upload&objecttype=sandbox HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 121
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [121 bytes data]
+* upload completely sent off: 121 out of 121 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:45:02 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "556ce43763b116622238c65d89d24dd485f20666"
+< Content-Length: 24
+< X-Rest-Time: 20431.280 us
+< CMS-Server-Time: D=27414 t=1647603902102482
+< 
+{ [5 bytes data]
+100   145  100    24  100   121    413   2086 --:--:-- --:--:-- --:--:--  2500
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ ""
+,{}
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:45:02.135 UTC: 	 sandbox c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz is already in the S3 store, will not upload again
+DEBUG 2022-03-18 11:45:02.135 UTC: 	 Loading required information from the environment
+DEBUG 2022-03-18 11:45:02.135 UTC: 	 Found CMSSW_11_2_2_patch1 for slc7_amd64_gcc900 with base /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1
+DEBUG 2022-03-18 11:45:02.136 UTC: 	 Making tarball in /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/debugFiles.tgz
+DEBUG 2022-03-18 11:45:02.533 UTC: 	 Uploading archive /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/debugFiles.tgz (325 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2022-03-18 11:45:02.692 UTC: 	 Encoded data for curl request: tarballname=4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz&subresource=upload&objecttype=sandbox
+DEBUG 2022-03-18 11:45:02.693 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDataB9YtY_ --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/cache?tarballname=4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz&subresource=upload&objecttype=sandbox" | tee /dev/stderr 
+DEBUG 2022-03-18 11:45:02.770 UTC: 	 output : {"result": [
+ "https://s3.cern.ch/crabcache_prod"
+,{"key": "jodedra/sandboxes/4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz", "AWSAccessKeyId": "ab00fcc889f248c495d2875f15a3badb", "policy": "eyJleHBpcmF0aW9uIjogIjIwMjItMDMtMThUMTI6NDU6MDJaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAiam9kZWRyYS9zYW5kYm94ZXMvNGYzOGY0MDU0NDE1M2UxZGU1MTIzZmRhMzQ5YmU4NzZhMDU3MGY3NmE2ODU2YWYxN2ZiNTYyZWZiMGRkODk4MS50YXIuZ3oifV19", "signature": "/WZR16bCHUSi0lVDZbcgnZdS9M0="}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/cache?tarballname=4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz&subresource=upload&objecttype=sandbox HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 121
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [121 bytes data]
+* upload completely sent off: 121 out of 121 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:45:02 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "f562bfd1363974e74b4a8fea3bb2affa64c03881"
+< Content-Length: 516
+< X-Rest-Time: 7343.292 us
+< CMS-Server-Time: D=13150 t=1647603902753147
+< 
+{ [5 bytes data]
+100   637  100   516  100   121  12285   2880 --:--:-- --:--:-- --:--:-- 15166
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ "https://s3.cern.ch/crabcache_prod"
+,{"key": "jodedra/sandboxes/4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz", "AWSAccessKeyId": "ab00fcc889f248c495d2875f15a3badb", "policy": "eyJleHBpcmF0aW9uIjogIjIwMjItMDMtMThUMTI6NDU6MDJaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAiam9kZWRyYS9zYW5kYm94ZXMvNGYzOGY0MDU0NDE1M2UxZGU1MTIzZmRhMzQ5YmU4NzZhMDU3MGY3NmE2ODU2YWYxN2ZiNTYyZWZiMGRkODk4MS50YXIuZ3oifV19", "signature": "/WZR16bCHUSi0lVDZbcgnZdS9M0="}
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:45:02.771 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=jodedra/sandboxes/4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjItMDMtMThUMTI6NDU6MDJaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAiam9kZWRyYS9zYW5kYm94ZXMvNGYzOGY0MDU0NDE1M2UxZGU1MTIzZmRhMzQ5YmU4NzZhMDU3MGY3NmE2ODU2YWYxN2ZiNTYyZWZiMGRkODk4MS50YXIuZ3oifV19" -F "signature=/WZR16bCHUSi0lVDZbcgnZdS9M0=" -F "file=@/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2022-03-18 11:45:02.858 UTC: 	 exitcode: 0
+stdout: 
+DEBUG 2022-03-18 11:45:02.859 UTC: 	 sandbox /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/inputs/debugFiles.tgz successully uploaded to S3
+DEBUG 2022-03-18 11:45:02.859 UTC: 	 Result uploading input files: c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz 
+INFO 2022-03-18 11:45:02.859 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2022-03-18 11:45:02.859 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'lfn': '/store/user/jodedra/JpsiK_20221603_HLTRAW', 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T2_CH_CSCS', 'algoargs': 4, 'cachefilename': 'c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 4000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_11_2_2_patch1', 'edmoutfiles': ['BPH-RunIIFall18GS-00180_1MiniAOD.root'], 'userfiles': [], 'primarydataset': '', 'inputdata': '/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER', 'ignorelocality': 0, 'dryrun': 1, 'workflow': 'crab_JpsiK_20221603_HLTRAW', 'cacheurl': u'https://cmsweb.cern.ch/S3/crabcache_prod', 'nonprodsw': 0, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': '4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc900', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', 'publishgroupname': 0, 'publishname2': 'Spring22_HLTRAW', 'jobtype': 'Analysis'} 
+DEBUG 2022-03-18 11:45:02.860 UTC: 	 Encoded submit request: maxjobruntime=1250&lfn=%2Fstore%2Fuser%2Fjodedra%2FJpsiK_20221603_HLTRAW&savelogsflag=0&useparent=0&asyncdest=T2_CH_CSCS&algoargs=4&cachefilename=c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz&numcores=1&generator=pythia&maxmemory=4000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_11_2_2_patch1&primarydataset=&inputdata=%2FBuToKJpsi_Toee_2021206%2Fjodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8%2FUSER&ignorelocality=0&dryrun=1&workflow=crab_JpsiK_20221603_HLTRAW&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&nonprodsw=0&oneEventMode=0&debugfilename=4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc900&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSReader&publishgroupname=0&publishname2=Spring22_HLTRAW&jobtype=Analysis&edmoutfiles=BPH-RunIIFall18GS-00180_1MiniAOD.root
+DEBUG 2022-03-18 11:45:02.860 UTC: 	 Encoded data for curl request: maxjobruntime=1250&lfn=%2Fstore%2Fuser%2Fjodedra%2FJpsiK_20221603_HLTRAW&savelogsflag=0&useparent=0&asyncdest=T2_CH_CSCS&algoargs=4&cachefilename=c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz&numcores=1&generator=pythia&maxmemory=4000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_11_2_2_patch1&primarydataset=&inputdata=%2FBuToKJpsi_Toee_2021206%2Fjodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8%2FUSER&ignorelocality=0&dryrun=1&workflow=crab_JpsiK_20221603_HLTRAW&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&nonprodsw=0&oneEventMode=0&debugfilename=4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc900&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSReader&publishgroupname=0&publishname2=Spring22_HLTRAW&jobtype=Analysis&edmoutfiles=BPH-RunIIFall18GS-00180_1MiniAOD.root
+DEBUG 2022-03-18 11:45:02.861 UTC: 	 Executing command :
+ curl -v -X PUT -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDataVOQjwF --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/workflow" | tee /dev/stderr 
+DEBUG 2022-03-18 11:45:02.957 UTC: 	 output : {"result": [
+ {"RequestName": "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> PUT /crabserver/prod/workflow HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 1031
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [1031 bytes data]
+* upload completely sent off: 1031 out of 1031 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:45:02 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< X-Rest-Status: 100
+< Etag: "b11f64520270b904cc3e21ba038ed6eb1b9e9307"
+< Content-Length: 85
+< X-Rest-Time: 27226.925 us
+< CMS-Server-Time: D=32501 t=1647603902920747
+< 
+{ [5 bytes data]
+100  1116  100    85  100  1031   1370  16629 --:--:-- --:--:-- --:--:-- 18000
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ {"RequestName": "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"}
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:45:02.958 UTC: 	 Result: {u'result': [{u'RequestName': u'220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW'}]}
+INFO 2022-03-18 11:45:02.964 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2022-03-18 11:45:02.964 UTC: 	 Task name: 220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW
+INFO 2022-03-18 11:45:02.964 UTC: 	 Project dir: crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW
+INFO 2022-03-18 11:45:02.964 UTC: 	 Waiting for task to be processed
+DEBUG 2022-03-18 11:45:02.964 UTC: 	 Start time:2022-03-18 12:45:02
+DEBUG 2022-03-18 11:45:02.964 UTC: 	 Max wait time: 900 s until : 2022-03-18 13:00:02
+INFO 2022-03-18 11:45:02.964 UTC: 	 Checking task status
+DEBUG 2022-03-18 11:45:02.964 UTC: 	 Looking up status of task 220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:45:02.965 UTC: 	 Encoded data for curl request: subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:45:02.966 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDatalj1GmD --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW" | tee /dev/stderr 
+DEBUG 2022-03-18 11:45:03.056 UTC: 	 output : {"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"NEW"
+,"SUBMIT"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"None"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 78
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [78 bytes data]
+* upload completely sent off: 78 out of 78 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:45:03 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "ff8532b8c65ef6ff65e2139330a88a612038cd54"
+< Content-Length: 2742
+< X-Rest-Time: 13259.888 us
+< CMS-Server-Time: D=21187 t=1647603903030664
+< 
+{ [5 bytes data]
+100  2820  100  2742  100    78  55959   1591 --:--:-- --:--:-- --:--:-- 57551
+* Connection #0 to host cmsweb.cern.ch left intact
+{"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"NEW"
+,"SUBMIT"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"None"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:45:03.057 UTC: 	 Query Time: 2022-03-18 12:45:02 Task status: NEW
+INFO 2022-03-18 11:45:03.057 UTC: 	 Task status: NEW
+INFO 2022-03-18 11:45:03.057 UTC: 	 Please wait...
+DEBUG 2022-03-18 11:45:33.073 UTC: 	 Looking up status of task 220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:45:33.074 UTC: 	 Encoded data for curl request: subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:45:33.076 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDataQp1xJw --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW" | tee /dev/stderr 
+DEBUG 2022-03-18 11:45:33.171 UTC: 	 output : {"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"HOLDING"
+,"SUBMIT"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 78
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [78 bytes data]
+* upload completely sent off: 78 out of 78 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:45:33 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "bfd8f4465a7687525c1af5943d94828eddb8e87c"
+< Content-Length: 2756
+< X-Rest-Time: 9649.515 us
+< CMS-Server-Time: D=15772 t=1647603933151374
+< 
+{ [5 bytes data]
+100  2834  100  2756  100    78  58638   1659 --:--:-- --:--:-- --:--:-- 61608
+* Connection #0 to host cmsweb.cern.ch left intact
+{"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"HOLDING"
+,"SUBMIT"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:45:33.172 UTC: 	 Query Time: 2022-03-18 12:45:33 Task status: HOLDING
+INFO 2022-03-18 11:45:33.173 UTC: 	 Task status: HOLDING
+INFO 2022-03-18 11:45:33.173 UTC: 	 Please wait...
+DEBUG 2022-03-18 11:46:03.203 UTC: 	 Looking up status of task 220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:46:03.204 UTC: 	 Encoded data for curl request: subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW
+DEBUG 2022-03-18 11:46:03.205 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDatayEEmGB --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW" | tee /dev/stderr 
+DEBUG 2022-03-18 11:46:03.335 UTC: 	 output : {"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"UPLOADED"
+,"None"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=search&workflow=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 78
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [78 bytes data]
+* upload completely sent off: 78 out of 78 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:46:03 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "655e1407de8ca4b51eaf3052534d97eac06c6415"
+< Content-Length: 2755
+< X-Rest-Time: 6558.895 us
+< CMS-Server-Time: D=12298 t=1647603963318469
+< 
+{ [5 bytes data]
+100  2833  100  2755  100    78  65595   1857 --:--:-- --:--:-- --:--:-- 67452
+* Connection #0 to host cmsweb.cern.ch left intact
+{"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid"]}, "result": [
+ "220318_114502:jodedra_crab_JpsiK_20221603_HLTRAW"
+,"None"
+,"None"
+,"UPLOADED"
+,"None"
+,"2022-03-18 11:45:02.948794"
+,"None"
+,"None"
+,"None"
+,"CMSSW_11_2_2_patch1"
+,"slc7_amd64_gcc900"
+,"/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER"
+,"F"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 4, 'runs': [], 'lumis': []}"
+,"c04c680681d79d0384a739ba0000c53994d219beff88b274bf8e95f8b2f047c0.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"jodedra"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jodedra/CN=857621/CN=Jay Odedra"
+,"cms"
+,"None"
+,"None"
+,"Spring22_HLTRAW-00000000000000000000000000000000"
+,"F"
+,"T2_CH_CSCS"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['BPH-RunIIFall18GS-00180_1MiniAOD.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"F"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"4000"
+,"10"
+,"None"
+,"[]"
+,"None"
+,"None"
+,"[]"
+,"[]"
+,"https://cmsweb.cern.ch/crabserver/prod"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"None"
+,"T"
+,"[]"
+,"T"
+,"/store/user/jodedra/JpsiK_20221603_HLTRAW"
+,"F"
+,"None"
+,"F"
+,"None"
+,"BuToKJpsi_Toee_2021206"
+,"None"
+,"4f38f40544153e1de5123fda349be876a0570f76a6856af17fb562efb0dd8981.tar.gz"
+,"None"
+,"filetransfers"
+,"F"
+,"188.184.105.65"
+,"0.0"
+,"None"
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:46:03.336 UTC: 	 Query Time: 2022-03-18 12:46:03 Task status: UPLOADED
+INFO 2022-03-18 11:46:03.336 UTC: 	 Task status: UPLOADED
+DEBUG 2022-03-18 11:46:03.337 UTC: 	 Ended submission process.
+INFO 2022-03-18 11:46:03.337 UTC: 	 Created temporary directory for dry run sandbox in /tmp/jodedra/tmp0Up7jL
+DEBUG 2022-03-18 11:46:03.338 UTC: 	 Encoded data for curl request: taskname=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW&subresource=download&objecttype=runtimefiles
+DEBUG 2022-03-18 11:46:03.339 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.220210" -H "Accept: */*" --data @/tmp/crab_curlDatazp8Avg --cert "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --key "/afs/cern.ch/user/j/jodedra/private/x509up_u147761" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/cache?taskname=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW&subresource=download&objecttype=runtimefiles" | tee /dev/stderr 
+DEBUG 2022-03-18 11:46:03.415 UTC: 	 output : {"result": [
+ "https://s3.cern.ch/crabcache_prod/jodedra/220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW/runtimefiles?AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb&Signature=AECjh5WU1qXtLggggQ0iriiHUnM%3D&Expires=1647607563"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.184.73.32:8443...
+* Connected to cmsweb.cern.ch (188.184.73.32) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6199 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13495 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6668 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 17 13:05:12 2022 GMT
+*  expire date: Mar 24 13:05:12 2023 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/cache?taskname=220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW&subresource=download&objecttype=runtimefiles HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.220210
+> Accept: */*
+> Content-Length: 104
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [104 bytes data]
+* upload completely sent off: 104 out of 104 bytes
+{ [5 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Fri, 18 Mar 2022 11:46:03 GMT
+< Server: CherryPy/17.4.0
+< Content-Type: application/json
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "132918bc17f810fe33812ac326ddc914e6414f8a"
+< Content-Length: 233
+< X-Rest-Time: 3342.867 us
+< CMS-Server-Time: D=8927 t=1647603963401393
+< 
+{ [5 bytes data]
+100   337  100   233  100   104   6131   2736 --:--:-- --:--:-- --:--:--  8868
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ "https://s3.cern.ch/crabcache_prod/jodedra/220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW/runtimefiles?AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb&Signature=AECjh5WU1qXtLggggQ0iriiHUnM%3D&Expires=1647607563"
+]}
+
+ retcode : 0
+DEBUG 2022-03-18 11:46:03.416 UTC: 	 PreSignedUrl to download runtimefiles received OK
+DEBUG 2022-03-18 11:46:03.428 UTC: 	 Will execute:
+wget -Sq -O /tmp/jodedra/tmp0Up7jL/dry-run-sandbox.tar.gz  "https://s3.cern.ch/crabcache_prod/jodedra/220318_114502%3Ajodedra_crab_JpsiK_20221603_HLTRAW/runtimefiles?AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb&Signature=AECjh5WU1qXtLggggQ0iriiHUnM%3D&Expires=1647607563"
+DEBUG 2022-03-18 11:46:03.590 UTC: 	 exitcode: 0
+stdout: 
+INFO 2022-03-18 11:46:04.617 UTC: 	 Executing test, please wait...
+DEBUG 2022-03-18 12:04:52.635 UTC: 	 ======== CMSRunAnalysis.sh STARTING at Fri Mar 18 11:46:04 GMT 2022 ========
+Local time : Fri Mar 18 12:46:04 CET 2022
+Current system : Linux lxplus721.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+Current processor: model name	: Intel Core Processor (Broadwell, IBRS)
+======== CMS environment load starting at Fri Mar 18 11:46:04 GMT 2022 ========
+WN missing VO_CMS_SW_DIR/OSG_APP/CVMFS environment variable, forcing it to CVMFS=/cvmfs/cms.cern.ch
+========  CMS environment load finished at Fri Mar 18 11:46:05 GMT 2022 ========
+
+==== Python discovery STARTING ====
+Job requires OS: , thus setting ScramArch to: slc6_amd64_gcc493
+WMAgent bootstrap: COMP Python path is: /cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external
+WMAgent bootstrap: latest python release is: 2.7.13
+WMAgent bootstrap: found python2 at..
+/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/python/2.7.13/bin/python2
+==== Python discovery FINISHED at Fri Mar 18 11:46:05 GMT 2022 ====
+==== Make sure /afs/cern.ch/user/j/jodedra is defined ====
+======== Current environment dump STARTING ========
+== ENV: MANPATH=/cvmfs/cms.cern.ch/share/man:/cvmfs/cms.cern.ch/share/man::/opt/puppetlabs/puppet/share/man
+== ENV: XDG_SESSION_ID=c44236
+== ENV: VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+== ENV: GUESTFISH_INIT=\e[1;34m
+== ENV: HOSTNAME=lxplus721.cern.ch
+== ENV: SELINUX_ROLE_REQUESTED=
+== ENV: TERM=xterm
+== ENV: SHELL=/bin/bash
+== ENV: HISTSIZE=1000
+== ENV: TMPDIR=/tmp/jodedra
+== ENV: SSH_CLIENT=82.42.187.71
+== ENV: 54224
+== ENV: 22
+== ENV: CONDA_SHLVL=0
+== ENV: CVSROOT=:gserver:cmssw.cvs.cern.ch:/local/reps/CMSSW
+== ENV: SELINUX_USE_CURRENT_RANGE=
+== ENV: QTDIR=/usr/lib64/qt-3.3
+== ENV: SCRAM_ARCH=slc7_amd64_gcc900
+== ENV: QTINC=/usr/lib64/qt-3.3/include
+== ENV: SSH_TTY=/dev/pts/91
+== ENV: STAGE_HOST=castorcms
+== ENV: QT_GRAPHICSSYSTEM_CHECKED=1
+== ENV: USER=jodedra
+== ENV: LD_LIBRARY_PATH=/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-future/0.18.2/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-argparse/1.3.0-comp6/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-setuptools/18.3.2-comp3/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/python/2.7.13/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/python/2.7.13/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/readline/6.2/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/ncurses/5.9/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/gdbm/1.8.3/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/db4/4.8.30/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/sqlite/3.8.10.2/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/openssl/1.0.1r/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/expat/2.0.1/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/zlib/1.2.8/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/bz2lib/1.0.6/lib:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/gcc/4.9.3/lib64:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/gcc/4.9.3/lib
+== ENV: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+== ENV: CRAB3_RUNTIME_DEBUG=True
+== ENV: CASTOR_HOME=/castor/cern.ch/user/j/jodedra
+== ENV: SITECONFIG_PATH=/cvmfs/cms.cern.ch/SITECONF/local
+== ENV: GUESTFISH_PS1=\[\e[1;32m\]><fs>\[\e[0;31m\]
+== ENV: MAIL=/var/spool/mail/jodedra
+== ENV: PATH=/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-future/0.18.2/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-setuptools/18.3.2-comp3/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/python/2.7.13/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/python/2.7.13/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/ncurses/5.9/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/db4/4.8.30/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/sqlite/3.8.10.2/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/openssl/1.0.1r/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/expat/2.0.1/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/bz2lib/1.0.6/bin:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/gcc/4.9.3/bin:/afs/cern.ch/cms/caf/scripts:/cvmfs/cms.cern.ch/common:/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin:/afs/cern.ch/cms/caf/scripts:/cvmfs/cms.cern.ch/common:/usr/sue/bin:/usr/lib64/qt-3.3/bin:/usr/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/bin:/afs/cern.ch/user/j/jodedra/.local/bin:/afs/cern.ch/user/j/jodedra/bin
+== ENV: CMS_PATH=/cvmfs/cms.cern.ch
+== ENV: PWD=/tmp/jodedra/tmp0Up7jL
+== ENV: EDITOR=/bin/nano
+== ENV: -w
+== ENV: LANG=
+== ENV: MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+== ENV: QT_GRAPHICSSYSTEM=native
+== ENV: LOADEDMODULES=
+== ENV: KDEDIRS=/usr
+== ENV: GUESTFISH_OUTPUT=\e[0m
+== ENV: MYPROXY_SERVER=myproxy.cern.ch
+== ENV: SELINUX_LEVEL_REQUESTED=
+== ENV: EOS_MGM_URL=root://eoscms.cern.ch
+== ENV: SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+== ENV: HISTCONTROL=ignoredups
+== ENV: KRB5CCNAME=FILE:/tmp/krb5cc_147761_C9Wj97
+== ENV: TEXINPUTS=:/cvmfs/cms.cern.ch/latex/styles
+== ENV: SHLVL=4
+== ENV: HOME=/afs/cern.ch/user/j/jodedra
+== ENV: X509_USER_PROXY=/afs/cern.ch/user/j/jodedra/private/x509up_u147761
+== ENV: _VIRTUALENVWRAPPER_API=
+== ENV: mkvirtualenv
+== ENV: rmvirtualenv
+== ENV: lsvirtualenv
+== ENV: showvirtualenv
+== ENV: workon
+== ENV: add2virtualenv
+== ENV: cdsitepackages
+== ENV: cdvirtualenv
+== ENV: lssitepackages
+== ENV: toggleglobalsitepackages
+== ENV: cpvirtualenv
+== ENV: setvirtualenvproject
+== ENV: mkproject
+== ENV: cdproject
+== ENV: mktmpenv
+== ENV: wipeenv
+== ENV: allvirtualenv
+== ENV: CVMFS=/cvmfs/cms.cern.ch
+== ENV: LCG_GFAL_INFOSYS=lcg-bdii.cern.ch:2170
+== ENV: LOGNAME=jodedra
+== ENV: PYTHONPATH=/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-future/0.18.2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-argparse/1.3.0-comp6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-setuptools/18.3.2-comp3/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib
+== ENV: QTLIB=/usr/lib64/qt-3.3/lib
+== ENV: CVS_RSH=ssh
+== ENV: XDG_DATA_DIRS=/afs/cern.ch/user/j/jodedra/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+== ENV: SSH_CONNECTION=82.42.187.71
+== ENV: 54224
+== ENV: 188.184.105.65
+== ENV: 22
+== ENV: MODULESHOME=/usr/share/Modules
+== ENV: LESSOPEN=||/usr/bin/lesspipe.sh
+== ENV: %s
+== ENV: _CONDOR_JOB_AD=Job.submit
+== ENV: XDG_RUNTIME_DIR=/run/user/147761
+== ENV: DISPLAY=localhost:34.0
+== ENV: QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+== ENV: GUESTFISH_RESTORE=\e[0m
+== ENV: BASH_FUNC_module()=()
+== ENV: {
+== ENV: eval
+== ENV: `/usr/bin/modulecmd
+== ENV: bash
+== ENV: $*`
+== ENV: }
+== ENV: _=/usr/bin/env
+======== Current environment dump FINISHING ========
+======== Tarball initialization STARTING at Fri Mar 18 11:46:05 GMT 2022 ========
++ [[ XTrue == \X ]]
++ echo 'I am in runtime debug mode. I will not extract the sandbox'
+I am in runtime debug mode. I will not extract the sandbox
+++ pwd
+++ pwd
++ export PYTHONPATH=/tmp/jodedra/tmp0Up7jL/CRAB3.zip:/tmp/jodedra/tmp0Up7jL/WMCore.zip:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-future/0.18.2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-argparse/1.3.0-comp6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-setuptools/18.3.2-comp3/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib
++ PYTHONPATH=/tmp/jodedra/tmp0Up7jL/CRAB3.zip:/tmp/jodedra/tmp0Up7jL/WMCore.zip:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-future/0.18.2/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-argparse/1.3.0-comp6/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/COMP/slc6_amd64_gcc493/external/py2-setuptools/18.3.2-comp3/lib/python2.7/site-packages:/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib
++ set +x
+======== Tarball initialization FINISHING at Fri Mar 18 11:46:05 GMT 2022 ========
+==== Local directory contents dump STARTING ====
+PWD: /tmp/jodedra/tmp0Up7jL
+== DIR: AdjustSites.py
+== DIR: CMSGroupMapper.py
+== DIR: CMSRunAnalysis.py
+== DIR: CMSRunAnalysis.sh
+== DIR: CMSRunAnalysis.tar.gz
+== DIR: InputFiles.tar.gz
+== DIR: Job.submit
+== DIR: PSet.pkl
+== DIR: PSet.py
+== DIR: PSetDump.py
+== DIR: RESTInteractions.py
+== DIR: RunJobs.dag
+== DIR: ServerUtilities.py
+== DIR: TaskManagerRun.tar.gz
+== DIR: TweakPSet.py
+== DIR: WMCore.zip
+== DIR: biglib
+== DIR: cmscp.py
+== DIR: dag_bootstrap.sh
+== DIR: datadiscovery.pkl
+== DIR: debug
+== DIR: debug_files.tar.gz
+== DIR: dry-run-sandbox.tar.gz
+== DIR: gWMS-CMSRunAnalysis.sh
+== DIR: input_args.json
+== DIR: input_dataset_duplicate_lumis.json
+== DIR: input_dataset_lumis.json
+== DIR: input_files.tar.gz
+== DIR: lib
+== DIR: run_and_lumis.tar.gz
+== DIR: sandbox.tar.gz
+== DIR: site.ad
+== DIR: site.ad.json
+== DIR: splitting-summary.json
+== DIR: src
+== DIR: taskinformation.pkl
+== DIR: taskworkerconfig.pkl
+==== Local directory contents dump FINISHING ====
+======== CMSRunAnalysis.py STARTING at Fri Mar 18 11:46:05 GMT 2022 ========
+Now running the CMSRunAnalysis.py job in /tmp/jodedra/tmp0Up7jL...
+++ pwd
++ python CMSRunAnalysis.py -r /tmp/jodedra/tmp0Up7jL -a sandbox.tar.gz --sourceURL=https://cmsweb.cern.ch/S3/crabcache_prod --jobNumber=0 --cmsswVersion=CMSSW_11_2_2_patch1 --scramArch=slc7_amd64_gcc900 --inputFile=job_input_file_list_1.txt --runAndLumis=job_lumis_1.json --lheInputFiles=False --firstEvent=1 --firstLumi=None --lastEvent=11 --firstRun=None --seeding=AutomaticSeeding --scriptExe=None --eventsPerLumi=None --maxRuntime=-60 '--scriptArgs=[]' -o '{}'
+==== CMSRunAnalysis.py STARTING at Fri Mar 18 11:46:06 2022 ====
+Local time : Fri Mar 18 12:46:06 2022
+==== Parameters Dump at Fri Mar 18 11:46:06 2022 ===
+archiveJob:     sandbox.tar.gz
+runDir:         /tmp/jodedra/tmp0Up7jL
+sourceURL:      https://cmsweb.cern.ch/S3/crabcache_prod
+jobNumber:      0
+cmsswVersion:   CMSSW_11_2_2_patch1
+scramArch:      slc7_amd64_gcc900
+inputFile       job_input_file_list_1.txt
+outFiles:       {}
+runAndLumis:    job_lumis_1.json
+lheInputFiles:  False
+firstEvent:     1
+firstLumi:      None
+eventsPerLumi:  None
+lastEvent:      11
+firstRun:       None
+seeding:        AutomaticSeeding
+userFiles:      None
+oneEventMode:   0
+scriptExe:      None
+scriptArgs:     []
+maxRuntime:     -60
+===================
+==== Sandbox untarring STARTING at Fri Mar 18 11:46:06 2022 ====
+
+==== Sandbox untarring FINISHED at Fri Mar 18 11:46:07 2022 ====
+==== WMCore filesystem preparation STARTING at Fri Mar 18 11:46:07 2022 ====
+==== WMCore filesystem preparation FINISHED at Fri Mar 18 11:46:07 2022 ====
+==== CMSSW Stack Execution STARTING at Fri Mar 18 11:46:07 2022 ====
+==== SCRAM Obj CREATED at Fri Mar 18 11:46:07 2022 ====
+==== SCRAM Obj INITIALIZED at Fri Mar 18 11:46:11 2022 ====
+==== Extract user sandbox in CMSSW directory ====
+
+==== Tweak PSet at Fri Mar 18 11:46:12 2022 ====
+Adding 4 files to 'fileNames' attr
+Adding 0 files to 'secondaryFileNames' attr
+Executing sh tweakThePset.sh in Scram env
+tweakThePset.sh output:\
+        Scram Command Diagnostic:
+        Command : scramv1
+        Architecture: slc7_amd64_gcc900
+        Executed: sh tweakThePset.sh
+        Exit Status: 0
+        Stdout: will execute: edm_pset_tweak.py --input_pkl PSet.pkl --output_pkl PSet.pkl-tweaked --json PSetTweak.json --create_untracked_psets
+Set attribute process.source.fileNames to cms.untracked.vstring(
+    '/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root', 
+    '/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_10.root', 
+    '/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_100.root', 
+    '/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_101.root'
+)
+Set attribute process.maxEvents.input to cms.untracked.int32(11)
+Set attribute process.maxSecondsUntilRampdown.input to cms.untracked.int32(-60)
+Set attribute process.SimpleMemoryCheck to SimpleMemoryCheck
+Set attribute process.CPU to CPU
+Set attribute process.source.firstEvent to cms.untracked.uint32(1)
+Set attribute process.Timing to Timing
+will execute: cmssw_enable_lazy_download.py --input_pkl PSet.pkl --output_pkl PSet.pkl-lazy
+Added lazy-download to SIteLocalConfigService
+will execute: cmssw_enable_lazy_download.py --input_pkl PSet.pkl --output_pkl PSet.pkl-lazy
+Added lazy-download to SIteLocalConfigService
+will execute: cmssw_handle_random_seeds.py --input_pkl PSet.pkl --output_pkl PSet.pkl-seeds --seeding dummy
+Populared random numbers of RandomNumberService
+will execute: cmssw_handle_nEvents.py --input_pkl PSet.pkl --output_pkl PSet.pkl-nEvents
+
+        Stderr: None 
+==== Tweak PSet Done at Fri Mar 18 11:47:08 2022 ====
+==== CMSSW JOB Execution started at Fri Mar 18 11:47:08 2022 ====
+==== CMSSW JOB Execution completed at Fri Mar 18 12:04:39 2022 ====
+Application exit code: 0
+==== Execution FINISHED at Fri Mar 18 12:04:39 2022 ====
+======== CMSSW OUTPUT STARTING ========
+NOTICE: lines longer than 3000 characters will be truncated
+== CMSSW: 18-Mar-2022 12:47:27 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root
+== CMSSW: %MSG-w XrdAdaptorInternal:  file_open 18-Mar-2022 12:47:29 CET pre-events
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root?xrdcl.requuid=f6f5038c-e83e-496e-8260-6289fa11e6f9.
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptorInternal:  file_open 18-Mar-2022 12:47:29 CET pre-events
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root?tried=&xrdcl.requuid=542cd9d5-0849-4c52-b19c-3aa05498302f.
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:47:29 CET  Initiating request to open file root://xrootd-cms.infn.it//store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root
+== CMSSW: %MSG-w XrdAdaptor:  file_open 18-Mar-2022 12:47:30 CET pre-events
+== CMSSW: Data is served from cscs.ch instead of original site T2_FR_GRIF_LLR
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:47:31 CET  Successfully opened file root://xrootd-cms.infn.it//store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root
+== CMSSW: 18-Mar-2022 12:47:54 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root
+== CMSSW: %MSG-w XrdAdaptorInternal:  MixingModule:mix@ctor 18-Mar-2022 12:47:55 CET  pre-events
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root?xrdcl.requuid=2e9fd94b-488e-4dca-9f2a-01b2ba84c93e.
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptorInternal:  MixingModule:mix@ctor 18-Mar-2022 12:47:55 CET  pre-events
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root?tried=&xrdcl.requuid=26ff721a-c573-471f-80b6-5b21fff95fe4.
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:47:55 CET  Initiating request to open file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root
+== CMSSW: %MSG-w XrdAdaptor:  MixingModule:mix@ctor 18-Mar-2022 12:47:57 CET pre-events
+== CMSSW: Data is served from T1_UK_RAL instead of original site T2_FR_GRIF_LLR
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:48:00 CET  Successfully opened file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root
+== CMSSW: [2022-03-18 12:52:45.006737 +0100][Error  ][PostMaster        ] [cms03.lcg.cscs.ch:1094 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: [2022-03-18 12:52:46.004540 +0100][Error  ][PostMaster        ] [pool-k8s-cms31.cscs.ch:33168 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: %MSG-e TkDetLayers:   TSGFromL2Muon:hltL3NoFiltersNoVtxTrajSeedOIHit@streamBeginRun  18-Mar-2022 12:55:12 CET Run: 1 Stream: 0
+== CMSSW:  ForwardDiskSectorBuilderFromDet: Trying to build Petal Wedge from Dets at different z positions !! Delta_z = -0.951241
+== CMSSW: %MSG
+== CMSSW: Begin processing the 1st record. Run 1, Event 3, LumiSection 1 on stream 0 at 18-Mar-2022 12:55:13.845 CET
+== CMSSW: 18-Mar-2022 12:55:32 CET  Closed file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50016/7e12e781-2659-47d6-8549-790a9fb38dee.root
+== CMSSW: 18-Mar-2022 12:55:32 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root
+== CMSSW: %MSG-w XrdAdaptorInternal:  MixingModule:mix 18-Mar-2022 12:55:33 CET  Run: 1 Event: 3
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root?xrdcl.requuid=f6f22d4c-fa90-43a2-9448-0ad157d25510.
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptorInternal:  MixingModule:mix 18-Mar-2022 12:55:33 CET  Run: 1 Event: 3
+== CMSSW: Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root?tried=&xrdcl.requuid=c70869c7-f440-49e3-a301-b761180697fa.
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:55:33 CET  Initiating request to open file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root
+== CMSSW: %MSG-w XrdAdaptor:  MixingModule:mix 18-Mar-2022 12:55:34 CET Run: 1 Event: 3
+== CMSSW: Data is served from [2001 instead of original site T2_FR_GRIF_LLR
+== CMSSW: %MSG
+== CMSSW: 18-Mar-2022 12:55:36 CET  Successfully opened file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root
+== CMSSW: %MSG-w XrdAdaptor:  (NoModuleName) 18-Mar-2022 12:55:42 CET pre-events
+== CMSSW: Data is now served from [2001, T2_KR_KISTI instead of previous [2001
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptor:  MixingModule:mix 18-Mar-2022 12:55:45 CET Run: 1 Event: 3
+== CMSSW: Data is now served from [2001 instead of previous [2001, T2_KR_KISTI
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptor:  (NoModuleName) 18-Mar-2022 12:55:46 CET pre-events
+== CMSSW: Data is now served from [2001, T1_UK_RAL instead of previous [2001
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptor:  MixingModule:mix 18-Mar-2022 12:55:46 CET Run: 1 Event: 3
+== CMSSW: Data is now served from [2001 instead of previous [2001, T1_UK_RAL
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptor:  (NoModuleName) 18-Mar-2022 12:55:52 CET pre-events
+== CMSSW: Data is now served from [2001, T1_UK_RAL instead of previous [2001
+== CMSSW: %MSG
+== CMSSW: %MSG-w XrdAdaptor:  MixingModule:mix 18-Mar-2022 12:55:52 CET Run: 1 Event: 3
+== CMSSW: Data is now served from [2001 instead of previous [2001, T1_UK_RAL
+== CMSSW: %MSG
+== CMSSW: 2022-03-18 12:56:58.607193: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+== CMSSW: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+== CMSSW: Begin processing the 2nd record. Run 1, Event 4, LumiSection 1 on stream 0 at 18-Mar-2022 12:57:04.000 CET
+== CMSSW: Begin processing the 3rd record. Run 1, Event 6, LumiSection 1 on stream 0 at 18-Mar-2022 12:57:30.707 CET
+== CMSSW: Begin processing the 4th record. Run 1, Event 7, LumiSection 1 on stream 0 at 18-Mar-2022 12:57:57.703 CET
+== CMSSW: Begin processing the 5th record. Run 1, Event 9, LumiSection 1 on stream 0 at 18-Mar-2022 12:59:06.235 CET
+== CMSSW: Begin processing the 6th record. Run 1, Event 13, LumiSection 1 on stream 0 at 18-Mar-2022 12:59:39.865 CET
+== CMSSW: Begin processing the 7th record. Run 1, Event 16, LumiSection 1 on stream 0 at 18-Mar-2022 13:00:06.945 CET
+== CMSSW: [2022-03-18 13:00:49.630438 +0100][Error  ][PostMaster        ] [maite.iihe.ac.be:1095 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: [2022-03-18 13:00:49.631244 +0100][Error  ][PostMaster        ] [maite.iihe.ac.be:1094 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: Begin processing the 8th record. Run 1, Event 18, LumiSection 1 on stream 0 at 18-Mar-2022 13:01:04.287 CET
+== CMSSW: [2022-03-18 13:01:40.681426 +0100][Error  ][PostMaster        ] [ceph-gw11.gridpp.rl.ac.uk:1094 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: [2022-03-18 13:01:40.681581 +0100][Error  ][PostMaster        ] [ceph-gw10.gridpp.rl.ac.uk:1094 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: [2022-03-18 13:01:40.681678 +0100][Error  ][PostMaster        ] [[2001:6a8:1080::b:101]:20345 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: [2022-03-18 13:01:40.681730 +0100][Error  ][PostMaster        ] [cms-t2-se01.sdfarm.kr:1095 #0] Forcing error on disconnect: [ERROR] Operation interrupted.
+== CMSSW: Begin processing the 9th record. Run 1, Event 19, LumiSection 1 on stream 0 at 18-Mar-2022 13:02:04.090 CET
+== CMSSW: Begin processing the 10th record. Run 1, Event 20, LumiSection 1 on stream 0 at 18-Mar-2022 13:03:12.279 CET
+== CMSSW: Begin processing the 11th record. Run 1, Event 21, LumiSection 1 on stream 0 at 18-Mar-2022 13:03:46.818 CET
+== CMSSW: 18-Mar-2022 13:04:30 CET  Closed file root://xrootd-cms.infn.it//store/user/jodedra/JpsiK_20220315/BuToKJpsi_Toee_2021206/winter21/220315_104816/0000/BPH-RunIIFall18GS-00180_1.root
+== CMSSW: 18-Mar-2022 13:04:37 CET  Closed file root://xrootd-cms.infn.it//store/mc/Run3Winter21GS/MinBias_TuneCP5_14TeV-pythia8/GEN-SIM/112X_mcRun3_2021_realistic_v15-v1/50011/cba1582c-2449-4b25-ab7f-edc984fccbf2.root
+== CMSSW: TimeReport> Time report complete in 1048.79 seconds
+== CMSSW:  Time Summary:
+== CMSSW:  - Min event:   26.5325
+== CMSSW:  - Max event:   109.93
+== CMSSW:  - Avg event:   50.2978
+== CMSSW:  - Total loop:  586.641
+== CMSSW:  - Total init:  455.581
+== CMSSW:  - Total job:   1048.79
+== CMSSW:  - EventSetup Lock:   0
+== CMSSW:  - EventSetup Get:   0
+== CMSSW:  Event Throughput: 0.0187508 ev/s
+== CMSSW:  CPU Summary:
+== CMSSW:  - Total loop:  537.521
+== CMSSW:  - Total init:  88.9118
+== CMSSW:  - Total extra: 0
+== CMSSW:  - Total job:   632.869
+== CMSSW:  Processing Summary:
+== CMSSW:  - Number of Events:  11
+== CMSSW:  - Number of Global Begin Lumi Calls:  1
+== CMSSW:  - Number of Global Begin Run Calls: 1
+== CMSSW:
+== CMSSW:
+== CMSSW: =============================================
+== CMSSW:
+== CMSSW: MessageLogger Summary
+== CMSSW:
+== CMSSW:  type     category        sev    module        subroutine        count    total
+== CMSSW:  ---- -------------------- -- ---------------- ----------------  -----    -----
+== CMSSW:     1 XrdAdaptor           -w (NoModuleName)                         3        3
+== CMSSW:     2 XrdAdaptor           -w MixingModule:mix                       4        4
+== CMSSW:     3 XrdAdaptor           -w MixingModule:mix                       1        1
+== CMSSW:     4 XrdAdaptor           -w file_open                              1        1
+== CMSSW:     5 XrdAdaptorInternal   -w MixingModule:mix                       2        2
+== CMSSW:     6 XrdAdaptorInternal   -w MixingModule:mix                       2        2
+== CMSSW:     7 XrdAdaptorInternal   -w file_open                              2        2
+== CMSSW:     8 TimeReport           -e AfterModEndJob                         1        1
+== CMSSW:     9 TkDetLayers          -e TSGFromL2Muon:hl                       1        1
+== CMSSW:    10 fileAction           -s MixingModule:mix                       4        4
+== CMSSW:    11 fileAction           -s MixingModule:mix                       3        3
+== CMSSW:    12 fileAction           -s MixingModule:mix                       1        1
+== CMSSW:    13 fileAction           -s file_close                             1        1
+== CMSSW:    14 fileAction           -s file_open                              3        3
+== CMSSW:
+== CMSSW:  type    category    Examples: run/evt        run/evt          run/evt
+== CMSSW:  ---- -------------------- ---------------- ---------------- ----------------
+== CMSSW:     1 XrdAdaptor           pre-events       pre-events       pre-events
+== CMSSW:     2 XrdAdaptor           1/3              1/3              1/3
+== CMSSW:     3 XrdAdaptor           pre-events
+== CMSSW:     4 XrdAdaptor           pre-events
+== CMSSW:     5 XrdAdaptorInternal   1/3              1/3
+== CMSSW:     6 XrdAdaptorInternal   pre-events       pre-events
+== CMSSW:     7 XrdAdaptorInternal   pre-events       pre-events
+== CMSSW:     8 TimeReport           EndJob
+== CMSSW:     9 TkDetLayers          Run: 1 Stream: 0
+== CMSSW:    10 fileAction           1/3              1/3              1/3
+== CMSSW:    11 fileAction           pre-events       pre-events       pre-events
+== CMSSW:    12 fileAction           post-events
+== CMSSW:    13 fileAction           PostGlobalEndRun
+== CMSSW:    14 fileAction           pre-events       pre-events       pre-events
+== CMSSW:
+== CMSSW: Severity    # Occurrences   Total Occurrences
+== CMSSW: --------    -------------   -----------------
+== CMSSW: Warning                15                  15
+== CMSSW: Error                   2                   2
+== CMSSW: System                 12                  12
+== CMSSW:
+== CMSSW: dropped waiting message count 0
+======== CMSSW OUTPUT FINSHING ========
+==== Report file creation STARTING at Fri Mar 18 12:04:39 2022 ====
+Sanitize FJR
+
+==== Job Exit Code from FrameworkJobReport.xml: 0 ====
+==== Checksum computation STARTING at Fri Mar 18 12:04:39 2022 ====
+==== Checksum FINISHED at Fri Mar 18 12:04:40 2022 ====
+== FileName: BPH-RunIIFall18GS-00180_1MiniAOD.root  -  FileAdler32: db7b6c9e  - FileSize: 21.617 MBytes
+== Adding PSet Hash for filename: BPH-RunIIFall18GS-00180_1MiniAOD.root
+==== PSet Hash computation STARTING at Fri Mar 18 12:04:40 2022 ====
+==== PSet Hash computation FINISHED at Fri Mar 18 12:04:52 2022 ====
+== edmProvDump pset hash e883a391f51bce07095a9ce0ff860c5b
+== Execution site from site-local-config.xml: T2_CH_CERN
+==== Report file creation FINISHED at Fri Mar 18 12:04:52 2022 ====
+==== CMSRunAnalysis.py FINISHED at Fri Mar 18 12:04:52 2022 ====
+Local time : Fri Mar 18 13:04:52 2022
++ jobrc=0
++ set +x
+== The job had an exit code of 0 
+======== CMSRunAnalysis.py FINISHING at Fri Mar 18 12:04:52 GMT 2022 ========
+
+INFO 2022-03-18 12:04:52.706 UTC: 	 
+Using FileBased splitting
+INFO 2022-03-18 12:04:52.707 UTC: 	 Task consists of 2498 jobs to process 9992 files
+INFO 2022-03-18 12:04:52.707 UTC: 	 The longest job will process 4 files, with an estimated processing time of 248 minutes
+INFO 2022-03-18 12:04:52.707 UTC: 	 The average job will process 4 files, with an estimated processing time of 223 minutes
+INFO 2022-03-18 12:04:52.707 UTC: 	 The shortest job will process 4 files, with an estimated processing time of 196 minutes
+INFO 2022-03-18 12:04:52.707 UTC: 	 The estimated memory requirement is 2652 MB
+INFO 2022-03-18 12:04:52.707 UTC: 	 
+Timing quantities given below are ESTIMATES. Keep in mind that external factors
+such as transient file-access delays can reduce estimate reliability.
+INFO 2022-03-18 12:04:52.707 UTC: 	 
+For ~480 minute jobs, use:
+INFO 2022-03-18 12:04:52.707 UTC: 	 Data.unitsPerJob = 8
+INFO 2022-03-18 12:04:52.707 UTC: 	 You will need to submit a new task
+INFO 2022-03-18 12:04:52.707 UTC: 	 
+Dry run requested: task paused
+To continue processing, use 'crab proceed'
+
+DEBUG 2022-03-18 12:04:52.707 UTC: 	 About to return
+INFO 2022-03-18 12:04:52.721 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW2dryrun/crab_JpsiK_20221603_HLTRAW/crab.log
