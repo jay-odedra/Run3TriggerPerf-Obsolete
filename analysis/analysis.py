@@ -14,10 +14,11 @@ from optparse import OptionParser, OptionValueError
 usage = "usage: python runTauDisplay_BsTauTau.py"
 parser = OptionParser(usage)
 
-
-parser = argparse.ArgumentParser(description='example e/gamma HLT analyser')
-parser.add_argument('in_filenames',nargs="+",help='input filename')
-parser.add_argument('--out','-o',default="purityCheck.root",help='output filename')
+parser = argparse.ArgumentParser(description='example e/gamma HLT analyser', fromfile_prefix_chars='@')
+#parser.add_argument('in_filenames',nargs="+",help='input filename')
+parser.add_argument('in_filenames',nargs="+")
+#parser.parse_args(['@filesdatasetfullname1.txt'])
+parser.add_argument('--out','-o',default="puritycheck.root",help='output filename')
 parser.add_argument('--type','-t',default="data",help='type')
 args = parser.parse_args()
 
@@ -393,7 +394,7 @@ for ev in events:
     out.jpsi_e2_eta[0] = highest_e2.Eta()
     out.jpsi_e2_phi[0] = highest_e2.Phi()
 
-#    chosen_b_pt = -1
+    chosen_b_pt = -1
     diff_mB = 100
     chosen_b = TLorentzVector()
 
@@ -425,11 +426,17 @@ for ev in events:
         bcand = highest_jpsi + tlv_pi
 
         out.hist_bmass.Fill(bcand.M())
+       
+        if bcand.Pt() > chosen_b_pt:
+           chosen_b_pt = bcand.Pt()
+           chosen_b = bcand
 
-        if abs(bcand.M() - mB) < diff_mB:
-            diff_mB = abs(bcand.M() - mB)
+
+
+#        if abs(bcand.M() - mB) < diff_mB:
+#            diff_mB = abs(bcand.M() - mB)
 #            chosen_b_pt = bcand.Pt()
-            chosen_b = bcand
+#            chosen_b = bcand
 
             
 #        print(ipf, bcand.M())

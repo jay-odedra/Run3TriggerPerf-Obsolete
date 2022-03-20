@@ -68,17 +68,17 @@ using namespace RooStats ;
 
 #define Exponential
 #define Gaussian
-#define FixGaussianResolution
+//#define FixGaussianResolution
 #define broadened
 #define nominal_opositeSign_sameSign
-#define plotSameSign
-#define significance_likelihood_curve
+//#define plotSameSign
+//#define significance_likelihood_curve
 
-#define data2016
-#define data2017
-#define data2018
+//#define data2016
+//#define data2017
+//#define data2018
 #define dataall
-#define datatest
+//#define datatest
 
 void fit();
 void Fit() { fit(); }
@@ -96,7 +96,7 @@ void fit() {
   TColor::CreateGradientColorTable(2,Stops,Red,Green,Blue,nb);
 
   RooRealVar mass ("mass", "mass", 4., 7.);
-  RooRealVar mass ("mass", "mass", 4.5, 6.5);
+  //RooRealVar mass ("mass", "mass", 4.5, 6.5);
 
   int Bc_bins  = 20;
 
@@ -113,9 +113,9 @@ void fit() {
   RooDataSet *cut_data      = (RooDataSet*)data     ->reduce(SelectionCut);
 
   RooRealVar mean_m1  ("mean_m1","mean of gaussian", 5.279, 5.0, 6.0);
-  RooRealVar mean_m1  ("mean_m1","mean of gaussian", 5.279);
+  //RooRealVar mean_m1  ("mean_m1","mean of gaussian", 5.279);
   RooRealVar sigma_m1 ("sigma_m1","Scale Factor 1",  0.1, 0.1, 0.15);
-  RooRealVar width_m1 ("width_m1","Scale Factor 1",  0.2, 0.01, 0.15);
+  //  RooRealVar width_m1 ("width_m1","Scale Factor 1",  0.2, 0.01, 0.15);
   RooRealVar alpha1("alpha1", "Alpha", 3.01542e+00);
   RooRealVar n1("n1", "Order", 5.13185e-01); //6,0.1,10);
   RooCBShape  mSig1   ("mSig1","signal p.d.f.", mass, mean_m1, sigma_m1,alpha1,n1);
@@ -133,7 +133,7 @@ void fit() {
 
   RooFitResult *fr = eOniaSignal.fitTo(*cut_data, NumCPU(4, kTRUE), Save(), Extended());
 
-  plot
+  // plot
   RooPlot *frame_main_fit1 = mass.frame(Title("mass 1 fit"), Bins(Bc_bins));
   cut_data->plotOn(frame_main_fit1, XErrorSize(0), Name("plotdata"));
   eOniaSignal.plotOn(frame_main_fit1, Components(mSig1),LineColor(kWhite),DrawOption("F"),FillColor(kBlack),FillStyle(3004), Name("signalpdf"));

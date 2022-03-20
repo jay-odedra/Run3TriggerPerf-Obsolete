@@ -1,0 +1,9 @@
+Proxy_path = /afs/cern.ch/user/j/jodedra/private/x509up_u147761
+arguments = $(Proxy_path) $(ClusterId) $(ProcId)
+executable              = helloworld.sh
+output                  = welcome.$(ClusterId).$(ProcId).out
+error                   = welcome.$(ClusterId).$(ProcId).err
+log                     = welcome.$(ClusterId).log
+transfer_output_files = file2.txt
+initialdir  = /afs/cern.ch/user/j/jodedra/CMSSW_12_3_X_2022-02-28-1100/src/test/Run3TriggerPerf-1/analysis/alloutputs
+queue

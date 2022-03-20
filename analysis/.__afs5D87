@@ -1,0 +1,10 @@
+#!/bin/bash
+#export X509_USER_PROXY=$1
+
+cd /afs/cern.ch/user/j/jodedra/CMSSW_12_3_X_2022-02-28-1100/src/test/Run3TriggerPerf-1/analysis/
+
+eval `scramv1 runtime -sh`
+
+python3 analysis.py @testerfile.txt -o puritycheck1.root
+
+#mv puritycheck.root /afs/cern.ch/user/j/jodedra/CMSSW_12_3_X_2022-02-28-1100/src/test/Run3TriggerPerf-1/analysis/alloutputs/output3/
