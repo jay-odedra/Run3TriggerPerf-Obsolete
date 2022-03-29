@@ -1151,3 +1151,27 @@ Traceback (most recent call last):
     raise ex
 CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_HLTRAW25032022submittedcheckfails
 INFO 2022-03-25 16:02:39.727 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
+DEBUG 2022-03-29 09:42:04.147 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-03-29 09:42:04.147 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.59.1.el7.x86_64 #1 SMP Wed Feb 23 16:47:03 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-03-29 09:42:04.147 UTC: 	 Executing command: 'submit'
+DEBUG 2022-03-29 09:42:04.148 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jodedra/.crab3
+INFO 2022-03-29 09:42:04.148 UTC: 	 Will use CRAB configuration file crab_step3.py
+DEBUG 2022-03-29 09:42:04.149 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-03-29 09:42:04.153 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-03-29 09:42:04.154 UTC: 	 Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_MiniAOD29032022/crab_JpsiK_20222903_MiniAOD' already exists 
+Please change the requestName in the config file
+ERROR 2022-03-29 09:42:04.154 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab_MiniAOD29032022/crab_JpsiK_20222903_MiniAOD' already exists 
+Please change the requestName in the config file
+INFO 2022-03-29 09:42:04.164 UTC: 	 Log file is /afs/cern.ch/user/j/jodedra/CMSSW_11_2_2_patch1/src/generatorstuff/Run3TriggerPerf-1/samples/mc/crab.log
