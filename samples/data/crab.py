@@ -5,7 +5,7 @@ config.General.requestName = ''
 config.General.transferLogs = False
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'hltData_v2.py'
+config.JobType.psetName = 'hltDatapixeldoublet_v2.py'
 config.JobType.maxMemoryMB = 4000
 config.JobType.numCores = 4
 
@@ -15,9 +15,9 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 1
 #config.Data.totalUnits=10
 
-config.Data.outLFNDirBase = '/store/user/ytakahas/EphemeralZeroBias_20211207/' #% (getUsernameFromSiteDB())
+config.Data.outLFNDirBase = '/store/user/jodedra/Charmonium_20223003/' #% (getUsernameFromSiteDB())
 config.Data.publication = True
-config.Data.outputDatasetTag = 'Winter21_Trigger_20211207'
+config.Data.outputDatasetTag = 'Spring22_Trigger_20223003_MiniAODHLTRAWCOMB'
 #config.Site.storageSite = 'T3_CH_PSI'
 config.Site.storageSite = 'T2_CH_CSCS'
 #config.Site.ignoreGlobalBlacklist = True
@@ -26,13 +26,13 @@ config.Site.storageSite = 'T2_CH_CSCS'
 #config.Site.blacklist = ['T2_US_Purdue']
 
 
-config.General.workArea = 'crab_CMSSW12_1_0_7Dec'
+config.General.workArea = 'crab_CMSSW12_1_0_30Mar'
 
-name = 'EphemeralZeroBias8'
+name = 'Charmonium'
 #name = 'ZeroBias10'
 
 config.General.requestName = name
-config.Data.inputDataset = '/' + name + '/Run2018D-PromptReco-v2/MINIAOD'
+config.Data.inputDataset = '/' + name + '/Run2018D-12Nov2019_UL2018-v1/MINIAOD'
 config.Data.secondaryInputDataset = '/' + name + '/Run2018D-v1/RAW'
 
 
