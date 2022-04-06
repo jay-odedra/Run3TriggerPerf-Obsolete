@@ -67,7 +67,7 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             list_forced_decays = cms.vstring('MyB0','Myanti-B0','MyB+','MyB-','MyB_s0','Myanti-B_s0','MyLambda_b0','Myanti-Lambda_b0','MyJ/psi','Mychi_c0','Mychi_c1','Mychi_c2','Myh_c','Mypsi(2S)','Mypsi(3770)'),  
             convertPythiaCodes = cms.untracked.bool(False),
             operates_on_particles = cms.vint32(0),
-            user_decay_file = cms.vstring('Modifiedincl_BtoJpsi_mumu.dec')
+            user_decay_file = cms.vstring('GeneratorInterface/EvtGenInterface/data/Modifiedincl_BtoJpsi_mumu.dec')
             PythiaParameters = cms.PSet(
         parameterSets = cms.vstring(
             'pythia8CommonSettings', 
@@ -123,8 +123,8 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
 )
 
 process.bufilter = cms.EDFilter("PythiaFilter",
-    MaxEta = cms.untracked.double(9999.0),
-    MinEta = cms.untracked.double(-9999.0),
+    MaxEta = cms.untracked.double(2.5),
+    MinEta = cms.untracked.double(-2.5),
     ParticleID = cms.untracked.int32(5)
 )
 
@@ -135,8 +135,8 @@ process.jpsifilteree = cms.EDFilter(
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(11, -11),
     MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MinEta          = cms.untracked.vdouble(-9999., -9999.), 
-    MaxEta          = cms.untracked.vdouble(9999., 9999.)
+    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
+    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
 
 process.jpsifiltermumu = cms.EDFilter(
@@ -146,8 +146,8 @@ process.jpsifiltermumu = cms.EDFilter(
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(13, -13),
     MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MinEta          = cms.untracked.vdouble(-9999., -9999.), 
-    MaxEta          = cms.untracked.vdouble(9999., 9999.)
+    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
+    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
 
 process.ProductionFilterSequence = cms.Sequence(process.generator*process.bufilter*process.jpsifiltermumu*process.jpsifilteree) 
