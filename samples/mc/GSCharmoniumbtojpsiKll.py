@@ -136,7 +136,7 @@ process.jpsifilteree = cms.EDFilter(
     DaughterIDs     = cms.untracked.vint32(11, -11),
     MinPt           = cms.untracked.vdouble(0.3, 0.3), 
     MinEta          = cms.untracked.vdouble(-2.4, -2.4), 
-    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
+    MaxEta          = cms.untracked.vdouble(2.4, 2.4)
     )
 
 process.jpsifiltermumu = cms.EDFilter(
@@ -146,8 +146,8 @@ process.jpsifiltermumu = cms.EDFilter(
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(13, -13),
     MinPt           = cms.untracked.vdouble(2., 2.), 
-    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
-    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
+    MinEta          = cms.untracked.vdouble(-2.4, -2.4), 
+    MaxEta          = cms.untracked.vdouble(2.4, 2.4)
     )
 
 process.ProductionFilterSequence = cms.Sequence(process.generator*process.bufilter*process.jpsifiltermumu*process.jpsifilteree) 
