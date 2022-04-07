@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 from Configuration.Eras.Era_Run3_cff import Run3
 
-process = cms.Process('SIM',Run3)
+process = cms.Process('SIM',Run3) #SHOULD I CHANGE THIS TO RUN2 ?
 
 #STANDARD CONFIG 
 process.load('Configuration.StandardSequences.Services_cff')
@@ -57,7 +57,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
 process.XMLFromDBSource.label = cms.string("Extended")
 process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '112X_mcRun3_2021_realistic_v15', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '112X_mcRun3_2021_realistic_v15', '') #SHOULD I CHANGE THIS TO RUN 2?
 
 process.generator = cms.EDFilter("Pythia8GeneratorFilter",
     ExternalDecays = cms.PSet(
@@ -67,7 +67,7 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             list_forced_decays = cms.vstring('MyB0','Myanti-B0','MyB+','MyB-','MyB_s0','Myanti-B_s0','MyLambda_b0','Myanti-Lambda_b0','MyJ/psi','Mychi_c0','Mychi_c1','Mychi_c2','Myh_c','Mypsi(2S)','Mypsi(3770)'),  
             convertPythiaCodes = cms.untracked.bool(False),
             operates_on_particles = cms.vint32(),
-            user_decay_file = cms.vstring('GeneratorInterface/EvtGenInterface/data/Modifiedincl_BtoJpsi_mumu.dec')
+            user_decay_file = cms.vstring('GeneratorInterface/EvtGenInterface/data/Modifiedincl_BtoJpsi_mumu.dec') # MODIFIED inclBtoJpsi_mumu
             PythiaParameters = cms.PSet(
         parameterSets = cms.vstring(
             'pythia8CommonSettings', 
