@@ -115,7 +115,7 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             'ParticleDecays:allowPhotonRadiation = on'
         )
     ),
-    comEnergy = cms.double(14000.0),
+    comEnergy = cms.double(13000),
     convertPythiaCodes = cms.untracked.bool(False),
     maxEventsToPrint = cms.untracked.int32(0),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -134,8 +134,8 @@ process.jpsifilteree = cms.EDFilter(
     NumberDaughters = cms.untracked.int32(2), 
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(11, -11),
-    MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
+    MinPt           = cms.untracked.vdouble(0.3, 0.3), 
+    MinEta          = cms.untracked.vdouble(-2.4, -2.4), 
     MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
 
