@@ -134,7 +134,7 @@ process.jpsifilteree = cms.EDFilter(
     NumberDaughters = cms.untracked.int32(2), 
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(11, -11),
-    MinPt           = cms.untracked.vdouble(0.7, 0.7), 
+    MinPt           = cms.untracked.vdouble(0.3, 0.3), 
     MinEta          = cms.untracked.vdouble(-2.4, -2.4), 
     MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
