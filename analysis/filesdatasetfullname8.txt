@@ -1,1 +1,0 @@
-root://cms-xrd-global.cern.ch//store/user/ytakahas/EphemeralZeroBias_20211207/EphemeralZeroBias8/Winter21_Trigger_20211207/211207_142303/0000/output_240.root
