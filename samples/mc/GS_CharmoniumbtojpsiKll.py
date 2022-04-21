@@ -83,7 +83,7 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             'SoftQCD:nonDiffractive = on', 
             'PTFilter:filter = on', 
             'PTFilter:quarkToFilter = 5', 
-            'PTFilter:scaleToFilter = 2.0', 
+            'PTFilter:scaleToFilter = 1.0', 
         ),
         pythia8CP5Settings = cms.vstring(
             'Tune:pp 14', 
