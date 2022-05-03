@@ -8,7 +8,7 @@ ptrange = np.arange(3, 14, 1).tolist()
 class TreeProducerGen(TreeProducerCommon):
     """Class to create a custom output file & tree; as well as create and contain branches."""
 
-    def __init__(self, name,  dataType, **kwargs):
+    def __init__(self, name, dataType, **kwargs):
         print('TreeProducerGen is called for', name)
         super(TreeProducerGen, self).__init__(name,dataType, **kwargs)
 
@@ -24,14 +24,14 @@ class TreeProducerGen(TreeProducerCommon):
 
         self.hist_bmass       = ROOT.TH1F('b_mass', 'b_mass', 60, 4.5, 6)
 
-        self.addBranch('instL',                  'f')
+        self.addBranch('instL',                 'f')
         self.addBranch('npu',                  'i')
         self.addBranch('isgjson',                  '?')
         self.addBranch('evt',                  'i')
         self.addBranch('run',                  'i')
         self.addBranch('lumi',                  'i')
         self.addBranch('jpsi_mass',                  'f')
-        self.addBranch('jpsi_pt',                  'f')
+        self.addBranch('jpsi_pt',                 'f')
         self.addBranch('jpsi_e1_pt',                  'f')
         self.addBranch('jpsi_e1_eta',                  'f')
         self.addBranch('jpsi_e1_phi',                  'f')
@@ -40,4 +40,9 @@ class TreeProducerGen(TreeProducerCommon):
         self.addBranch('jpsi_e2_phi',                  'f')
         self.addBranch('b_mass',                  'f')
         self.addBranch('b_pt',                  'f')
+        self.addBranchTrigger('Di_Muon_Trigger_fired',             'b')
+        self.addBranchTrigger('mumux_mass',                  'f')
+
+#        self.addBranch('Di_Electron_Trigger_fired',             'b')
+
 

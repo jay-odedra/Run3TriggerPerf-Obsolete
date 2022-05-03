@@ -5,6 +5,6 @@ executable              = analysis.sh
 output                  = welcome.$(ClusterId).$(ProcId).$(Number).out
 error                   = welcome.$(ClusterId).$(ProcId).err
 log                     = welcome.$(ClusterId).log
-+MaxRuntime = 39600
-initialdir = /afs/cern.ch/user/j/jodedra/charmoniumanalysis/CMSSW_12_1_0/src/Run3TriggerPerf-1/analysis/alloutputs/output$(Number)
++MaxRuntime = 84000
+initialdir = /afs/cern.ch/user/j/jodedra/CharmoniumDataMuonselection/CMSSW_12_1_0/src/Run3TriggerPerf-1/analysis/electronsideoutputs/
 queue

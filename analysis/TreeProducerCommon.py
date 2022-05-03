@@ -27,9 +27,9 @@ class TreeProducerCommon(object):
         # TREE
         self.outputfile = ROOT.TFile(name, 'RECREATE')
         self.tree       = ROOT.TTree('tree','tree')
+        self.trigger       = ROOT.TTree('trigger','trigger')
 
-
-    def addBranch(self, name, dtype='f', default=None):
+    def addBranch(self, name, treename, dtype='f',default=None):
         """Add branch with a given name, and create an array of the same name as address."""
         if hasattr(self,name):
           print("ERROR! TreeProducerCommon.addBranch: Branch of name '%s' already exists!"%(name))
@@ -39,14 +39,39 @@ class TreeProducerCommon(object):
             dtype = float        # float is a 'float64' ('f8')
           elif dtype.lower()=='i': # 'i' is only a 'int32'
             dtype = int            # int is a 'int64' ('i8')
+          elif dtype.lower()=='b' :
+            dtype = bool
 
 
         setattr(self,name,num.zeros(1,dtype=dtype))
         self.tree.Branch(name, getattr(self,name), '%s/%s'%(name,root_dtype[dtype]))
 
+
         if default!=None:
           getattr(self,name)[0] = default
-        
+
+
+    def addBranchTrigger(self, name, treename, dtype='f',default=None):
+        """Add branch with a given name, and create an array of the same name as address."""
+        if hasattr(self,name):
+          print("ERROR! TreeProducerCommon.addBranch: Branch of name '%s' already exists!"%(name))
+          exit(1)
+        if isinstance(dtype,str):
+          if dtype.lower()=='f': # 'f' is only a 'float32', and 'F' is a 'complex64', which do not work for filling float branches
+            dtype = float        # float is a 'float64' ('f8')
+          elif dtype.lower()=='i': # 'i' is only a 'int32'
+            dtype = int            # int is a 'int64' ('i8')
+          elif dtype.lower()=='b' :
+            dtype = bool
+
+
+        setattr(self,name,num.zeros(1,dtype=dtype))
+        self.trigger.Branch(name, getattr(self,name), '%s/%s'%(name,root_dtype[dtype]))
+
+
+        if default!=None:
+          getattr(self,name)[0] = default
+ 
     
     def endJob(self):
         """Write and close files after the job ends."""
