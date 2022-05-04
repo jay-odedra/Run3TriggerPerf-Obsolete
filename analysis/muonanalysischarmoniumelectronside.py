@@ -60,7 +60,12 @@ def squareddistancepfbool(muon1,muon2,pf,dis):
         return True
     else:
         return False
-
+def squareddistancepfvalue(muon1,muon2,pf):
+    value1 = (muon1.vertex().x()-pf.vertex().x())**2 + (muon1.vertex().y()-pf.vertex().y())**2 + (muon1.vertex().z()-pf.vertex().z())**2
+    value2 = (muon2.vertex().x()-pf.vertex().x())**2 + (muon2.vertex().y()-pf.vertex().y())**2 + (muon2.vertex().z()-pf.vertex().z())**2
+    distance1 = np.sqrt(value1)
+    distance2 = np.sqrt(value2)
+    return (distance1 + distance2)/2.0
 
 def createRunDict(file2read):
 
@@ -186,8 +191,8 @@ for ev in events:
     out.Di_Muon_Trigger_fired[0] = True
     #out.trigger.Fill()
     ev.getByLabel(label_mu, handle_mu) 
-    #muons = handle_mu.product()
-    print(muons.size())
+    muons = handle_mu.product()
+    #print(muons.size())
     offline_muons = []
     for iu, muon in enumerate(muons):
         if abs(muon.eta()) > 2.5: continue
@@ -211,7 +216,7 @@ for ev in events:
         #print(val) 
         flag_trackmatching = False
         if val > 0.5:continue
-        #if deltaR(muons[muon1].eta(),muons[muon1].phi(),muons[muon2].eta(),muons[muon2].phi()) > 1.0: continue
+        if deltaR(muons[muon1].eta(),muons[muon1].phi(),muons[muon2].eta(),muons[muon2].phi()) > 1.0: continue
         tlvu1 = TLorentzVector()
         tlvu1.SetPtEtaPhiM(muons[muon1].et(), 
                           muons[muon1].eta(), 
@@ -230,34 +235,42 @@ for ev in events:
         #out.hist_mee_wide.Fill(jpsiuu_mass)
         jpsiuu_pt = jpsiuu.Pt()
         tlvpf = TLorentzVector()
+        tlvpfclosestdistnace= 9999.
+        tlvpfclosest=TLorentzVector()
         for ipf, pf in enumerate(pfs):
             if pf.pt() < 0.5: continue
             if not pf.hasTrackDetails(): continue
             if not pf.trackHighPurity(): continue
+            if pf.pseudoTrack().hitPattern().numberOfValidPixelHits() < 0: continue
+            if pf.pseudoTrack().hitPattern().numberOfValidHits() < 3: continue
+            if pf.pseudoTrack().normalizedChi2() > 100: continue
             if abs(pf.pdgId())!=211 : continue
             if abs(pf.eta()) > 2.5: continue
-            if squareddistancepfbool(muons[muon1],muons[muon2],pf,0.5) == True or deltaR(jpsiuu.Eta(),jpsiuu.Phi(),pf.eta(),pf.phi()) > 1.0:
+            if squareddistancepfbool(muons[muon1],muons[muon2],pf,0.1) == False: # or deltaR(jpsiuu.Eta(),jpsiuu.Phi(),pf.eta(),pf.phi()) < 0.5:
                 continue
             else:
                 flag_trackmatching = True
                 tlvpf.SetPtEtaPhiM(pf.et(),pf.eta(),pf.phi(),mk)
-                break
-        mumuxcand = jpsiuu + tlvpf
-        out.mumux_mass[0]= mumuxcand.M()
-        out.trigger.Fill()
+                if squareddistancepfvalue(muons[muon1],muons[muon2],pf) < tlvpfclosestdistnace:
+                    tlvpfclosestdistnace = squareddistancepfvalue(muons[muon1],muons[muon2],pf)
+                    tlvpfclosest = tlvpf
+
+        #mumuxcand = jpsiuu + tlvpfclosest
+        #out.mumux_mass[0]= mumuxcand.M()
+        #out.trigger.Fill()
         if not flag_trackmatching: continue
        # print("muon1eta: ",muons[muon1].eta(),"  muon2eta: ",muons[muon2].eta())
 
         if jpsiuu_pt > highest_jpsiuu_pt:
             highest_jpsiuu_pt = jpsiuu_pt
-            highest_pf = tlvpf 
+            highest_pf = tlvpfclosest 
             highest_jpsiuu = jpsiuu
             highest_mu1 = tlvu1
             highest_mu2 = tlvu2
     if highest_jpsiuu_pt==-1: continue
-    #mumuxcand = highest_jpsiuu + highest_pf
-    #out.mumux_mass[0]= mumuxcand.M()
-    #out.trigger.Fill()
+    mumuxcand = highest_jpsiuu + highest_pf
+    out.mumux_mass[0]= mumuxcand.M()
+    out.trigger.Fill()
 
     '''
     out.jpsi_mass[0] = highest_jpsiuu.M()
