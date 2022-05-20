@@ -103,7 +103,7 @@ process.configurationMetadata = cms.untracked.PSet(
 
 process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
     SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('generation_step')
+        SelectEvents = cms.vstring('generation_step','additional_step')
     ),
     compressionAlgorithm = cms.untracked.string('LZMA'),
     compressionLevel = cms.untracked.int32(1),
@@ -122,7 +122,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
 
 # Other statements
 process.XMLFromDBSource.label = cms.string("Extended")
-process.genstepfilter.triggerConditions=cms.vstring("generation_step")
+process.genstepfilter.triggerConditions=cms.vstring("generation_step","additional_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '112X_mcRun3_2021_realistic_v15', '')
 
@@ -280,7 +280,7 @@ End
             'ParticleDecays:allowPhotonRadiation = on'
         )
     ),
-    comEnergy = cms.double(13600.0),
+    comEnergy = cms.double(13000.0),
     convertPythiaCodes = cms.untracked.bool(False),
     maxEventsToPrint = cms.untracked.int32(0),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -291,15 +291,15 @@ End
 process.bufilter = cms.EDFilter("PythiaFilter",
     #MaxEta = cms.untracked.double(9999.0),
     #MinEta = cms.untracked.double(-9999.0),
-    ParticleID = cms.untracked.int32(511)
+    ParticleID = cms.untracked.int32(521)
 )
 
 process.decayfilterpositiveleg = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1),
     NumberDaughters = cms.untracked.int32(2),
-    ParticleID      = cms.untracked.int32(511),  ## Bu
-    DaughterIDs     = cms.untracked.vint32(443, 310), ## J/psi and K+
+    ParticleID      = cms.untracked.int32(521),  ## Bu
+    DaughterIDs     = cms.untracked.vint32(443, -321), ## J/psi and K+
     MinPt           = cms.untracked.vdouble(-1., -1.),
     MinEta          = cms.untracked.vdouble(-9999., -9999.),
     MaxEta          = cms.untracked.vdouble( 9999.,  9999.)
@@ -311,10 +311,10 @@ process.jpsifilter = cms.EDFilter(
     NumberDaughters = cms.untracked.int32(2), 
     MotherID        = cms.untracked.int32(521),  
     ParticleID      = cms.untracked.int32(443),  
-    DaughterIDs     = cms.untracked.vint32(13, -13),
-    MinPt           = cms.untracked.vdouble(2.0, 2.0), 
-    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
-    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
+    DaughterIDs     = cms.untracked.vint32(11, -11),
+    MinPt           = cms.untracked.vdouble(-1.0, -1.0), 
+    MinEta          = cms.untracked.vdouble(-9999., -9999.), 
+    MaxEta          = cms.untracked.vdouble(0, 0)
     )
 process.jpsifilteree = cms.EDFilter(
     "PythiaDauVFilter",
@@ -323,9 +323,9 @@ process.jpsifilteree = cms.EDFilter(
     MotherID        = cms.untracked.int32(521),  
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(11, -11),
-    MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MaxEta          = cms.untracked.vdouble(9999., 9999.), 
-    MinEta          = cms.untracked.vdouble(0, 0)
+    MinPt           = cms.untracked.vdouble(-3.0, -3.0), 
+    MinEta          = cms.untracked.vdouble(0, 0), 
+    MaxEta          = cms.untracked.vdouble(9999.,9999.)
     )
 
 process.jpsifiltermumu = cms.EDFilter(
@@ -345,12 +345,14 @@ process.jpsifiltermumu = cms.EDFilter(
 
 #process.ProductionFilterSequence = cms.Sequence(process.generator * process.bufilter * process.decayfilterpositiveleg * process.jpsifilter)
 
-process.ProductionFilterSequence = cms.Sequence(process.generator * process.decayfilterpositiveleg)# process.jpsifilter * process.jpsifilteree)# * process.jpsifilteree )
+process.ProductionFilterSequence = cms.Sequence(process.generator *process.jpsifilter)# * process.jpsifilteree )
 
+process.ProductionFilterSequenceadditional = cms.Sequence(process.generator * process.jpsifilteree)
 #process.ProductionFilterSequence = cms.Sequence(process.generator+process.genParticlesForFilter+~process.bctoefilter+process.emenrichingfilter)
 
 # Path and EndPath definitions
 process.generation_step = cms.Path(process.pgen)
+process.additional_step = cms.Path(process.pgen)
 #process.simulation_step = cms.Path(process.psim)
 process.genfiltersummary_step = cms.EndPath(process.genFilterSummary)
 process.endjob_step = cms.EndPath(process.endOfProcess)
@@ -358,12 +360,15 @@ process.RAWSIMoutput_step = cms.EndPath(process.RAWSIMoutput)
 
 # Schedule definition
 #process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.simulation_step,process.endjob_step,process.RAWSIMoutput_step)
-process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.endjob_step,process.RAWSIMoutput_step)
+process.schedule = cms.Schedule(process.generation_step,process.additional_step,process.genfiltersummary_step,process.endjob_step,process.RAWSIMoutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 # filter all path with the production filter sequence
-for path in process.paths:
-	getattr(process,path).insert(0, process.ProductionFilterSequence)
+#for path in process.paths:
+#	getattr(process,path).insert(0, process.ProductionFilterSequence)
+getattr(process,'generation_step').insert(0, process.ProductionFilterSequence)
+getattr(process,'additional_step').insert(0, process.ProductionFilterSequenceadditional)
+
 print(process.paths)
 # customisation of the process.
 
