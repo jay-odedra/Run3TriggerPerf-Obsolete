@@ -54,7 +54,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
 #        input = cms.untracked.int32(nmax),
-        input = cms.untracked.int32(1000),
+        input = cms.untracked.int32(100),
     output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
 )
 
@@ -103,7 +103,7 @@ process.configurationMetadata = cms.untracked.PSet(
 
 process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
     SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('generation_step')
+        SelectEvents = cms.vstring('BnoughteeAntiBnoughtmumu','BnoughtmumuAntiBnoughtee','BnoughtmumuAntiBnoughtmumu','BnoughteeAntiBnoughtee')
     ),
     compressionAlgorithm = cms.untracked.string('LZMA'),
     compressionLevel = cms.untracked.int32(1),
@@ -122,7 +122,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
 
 # Other statements
 process.XMLFromDBSource.label = cms.string("Extended")
-process.genstepfilter.triggerConditions=cms.vstring("generation_step")
+process.genstepfilter.triggerConditions=cms.vstring("BnoughteeAntiBnoughtmumu","BnoughtmumuAntiBnoughtee","BnoughtmumuAntiBnoughtmumu","BnoughteeAntiBnoughtee")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '112X_mcRun3_2021_realistic_v15', '')
 
@@ -286,70 +286,44 @@ End
     pythiaHepMCVerbosity = cms.untracked.bool(False),
     pythiaPylistVerbosity = cms.untracked.int32(0)
 )
-
-
-process.bufilter = cms.EDFilter("PythiaFilter",
-    #MaxEta = cms.untracked.double(9999.0),
-    #MinEta = cms.untracked.double(-9999.0),
-    ParticleID = cms.untracked.int32(511)
-)
-process.b0filter = cms.EDFilter("PythiaFilter",
-    #MaxEta = cms.untracked.double(9999.0),
-    #MinEta = cms.untracked.double(-9999.0),
-    ParticleID = cms.untracked.int32(511)
-)
-
-process.decayfilterpositiveleg = cms.EDFilter(
-    "PythiaDauVFilter",
-    verbose         = cms.untracked.int32(1),
-    NumberDaughters = cms.untracked.int32(3),
-    ParticleID      = cms.untracked.int32(511),  ## Bu
-    DaughterIDs     = cms.untracked.vint32(-412, -11, 12), ## J/psi and K+
-    MinPt           = cms.untracked.vdouble(-1., -1., -1.),
-    MinEta          = cms.untracked.vdouble(-9999., -9999.,-9999.),
-    MaxEta          = cms.untracked.vdouble( 9999.,  9999., 9999.)
-    )
-
-
-process.jpsifilter = cms.EDFilter(
+process.Bnoughtmumu = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), 
     NumberDaughters = cms.untracked.int32(2), 
-    MotherID        = cms.untracked.int32(521),  
+    MotherID        = cms.untracked.int32(511),  
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(13, -13),
     MinPt           = cms.untracked.vdouble(2.0, 2.0), 
     MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
     MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
-process.jpsifilteree = cms.EDFilter(
-    "PythiaDauVFilter",
-    verbose         = cms.untracked.int32(1), 
-    NumberDaughters = cms.untracked.int32(2), 
-    MotherID        = cms.untracked.int32(511),  
-    ParticleID      = cms.untracked.int32(443),  
-    DaughterIDs     = cms.untracked.vint32(11, -11),
-    MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MaxEta          = cms.untracked.vdouble(9999., 9999.), 
-    MinEta          = cms.untracked.vdouble(-9999.,-9999.)
-    )
-process.jpsifiltereetwo = cms.EDFilter(
+process.AntiBnoughtmumu = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), 
     NumberDaughters = cms.untracked.int32(2), 
     MotherID        = cms.untracked.int32(-511),  
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(13, -13),
-    MinPt           = cms.untracked.vdouble(-1., -1.), 
-    MaxEta          = cms.untracked.vdouble(9999., 9999.), 
-    MinEta          = cms.untracked.vdouble(-9999.,-9999.)
+    MinPt           = cms.untracked.vdouble(2.0, 2.0), 
+    MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
+    MaxEta          = cms.untracked.vdouble(2.5, 2.5)
     )
-
-process.jpsifiltermumu = cms.EDFilter(
+process.Bnoughtee = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), 
-    NumberDaughters = cms.untracked.int32(2),
-    MotherID        = cms.untracked.int32(521),  
+    NumberDaughters = cms.untracked.int32(2), 
+    MotherID        = cms.untracked.int32(511),  
+    ParticleID      = cms.untracked.int32(443),  
+    DaughterIDs     = cms.untracked.vint32(11, -11),
+    MinPt           = cms.untracked.vdouble(3.0, 3.0), 
+    MinEta          = cms.untracked.vdouble(-1.5, -1.5), 
+    MaxEta          = cms.untracked.vdouble(1.5, 1.5)
+    )
+process.AntiBnoughtee = cms.EDFilter(
+    "PythiaDauVFilter",
+    verbose         = cms.untracked.int32(1), 
+    NumberDaughters = cms.untracked.int32(2), 
+    MotherID        = cms.untracked.int32(-511),  
     ParticleID      = cms.untracked.int32(443),  
     DaughterIDs     = cms.untracked.vint32(11, -11),
     MinPt           = cms.untracked.vdouble(3.0, 3.0), 
@@ -357,30 +331,36 @@ process.jpsifiltermumu = cms.EDFilter(
     MaxEta          = cms.untracked.vdouble(1.5, 1.5)
     )
 
-
-
-
-#process.ProductionFilterSequence = cms.Sequence(process.generator * process.bufilter * process.decayfilterpositiveleg * process.jpsifilter)
-
-process.ProductionFilterSequence = cms.Sequence(process.generator * process.jpsifilteree * process.jpsifiltereetwo)# *process.b0filter)# process.jpsifilter * process.jpsifilteree)# * process.jpsifilteree )
-
-#process.ProductionFilterSequence = cms.Sequence(process.generator+process.genParticlesForFilter+~process.bctoefilter+process.emenrichingfilter)
+process.filterBnoughteeAntiBnoughtmumu = cms.Sequence(process.generator * process.Bnoughtee * process.AntiBnoughtmumu)
+process.filterBnoughtmumuAntiBnoughtee = cms.Sequence(process.generator * process.Bnoughtmumu * process.AntiBnoughtee)
+process.filterBnoughtmumuAntiBnoughtmumu = cms.Sequence(process.generator * process.Bnoughtmumu * process.AntiBnoughtmumu)
+process.filterBnoughteeAntiBnoughtee = cms.Sequence(process.generator * process.Bnoughtee * process.AntiBnoughtee)
 
 # Path and EndPath definitions
-process.generation_step = cms.Path(process.pgen)
-#process.simulation_step = cms.Path(process.psim)
+process.BnoughteeAntiBnoughtmumu = cms.Path(process.pgen)
+process.BnoughtmumuAntiBnoughtee = cms.Path(process.pgen)
+process.BnoughtmumuAntiBnoughtmumu = cms.Path(process.pgen)
+process.BnoughteeAntiBnoughtee = cms.Path(process.pgen)
+process.simulation_step = cms.Path(process.psim)
 process.genfiltersummary_step = cms.EndPath(process.genFilterSummary)
 process.endjob_step = cms.EndPath(process.endOfProcess)
 process.RAWSIMoutput_step = cms.EndPath(process.RAWSIMoutput)
 
 # Schedule definition
-#process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.simulation_step,process.endjob_step,process.RAWSIMoutput_step)
-process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.endjob_step,process.RAWSIMoutput_step)
+process.schedule = cms.Schedule(process.BnoughteeAntiBnoughtmumu,process.BnoughtmumuAntiBnoughtee,process.BnoughtmumuAntiBnoughtmumu,process.BnoughteeAntiBnoughtee,process.genfiltersummary_step,process.simulation_step,process.endjob_step,process.RAWSIMoutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 # filter all path with the production filter sequence
-for path in process.paths:
-	getattr(process,path).insert(0, process.ProductionFilterSequence)
+#for path in process.paths:
+#	getattr(process,path).insert(0, process.ProductionFilterSequence)
+getattr(process,'BnoughteeAntiBnoughtmumu').insert(0, process.filterBnoughteeAntiBnoughtmumu)
+getattr(process,'BnoughtmumuAntiBnoughtee').insert(0, process.filterBnoughtmumuAntiBnoughtee)
+getattr(process,'BnoughtmumuAntiBnoughtmumu').insert(0, process.filterBnoughtmumuAntiBnoughtmumu)
+getattr(process,'BnoughteeAntiBnoughtee').insert(0, process.filterBnoughteeAntiBnoughtee)
+
+
+
+
 print(process.paths)
 # customisation of the process.
 

@@ -166,7 +166,7 @@ process.decayfilter = cms.EDFilter("PythiaDauVFilter",
 process.generator = cms.EDFilter("Pythia8GeneratorFilter",
     ExternalDecays = cms.PSet(
         EvtGen130 = cms.untracked.PSet(
-            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFEBMINUSEDIT.DEC'),
+            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
             particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
             list_forced_decays = cms.vstring(),        
             operates_on_particles = cms.vint32(),    # we care just about our signal particles
@@ -293,13 +293,18 @@ process.bufilter = cms.EDFilter("PythiaFilter",
     #MinEta = cms.untracked.double(-9999.0),
     ParticleID = cms.untracked.int32(521)
 )
+process.b0filter = cms.EDFilter("PythiaFilter",
+    #MaxEta = cms.untracked.double(9999.0),
+    #MinEta = cms.untracked.double(-9999.0),
+    ParticleID = cms.untracked.int32(511)
+)
 
 process.decayfilterpositiveleg = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1),
-    NumberDaughters = cms.untracked.int32(2),
-    ParticleID      = cms.untracked.int32(521),  ## Bu
-    DaughterIDs     = cms.untracked.vint32(443, -321), ## J/psi and K+
+    NumberDaughters = cms.untracked.int32(3),
+    ParticleID      = cms.untracked.int32(511),  ## Bu
+    DaughterIDs     = cms.untracked.vint32(-413, -11, 12), ## J/psi and K+
     MinPt           = cms.untracked.vdouble(-1., -1.),
     MinEta          = cms.untracked.vdouble(-9999., -9999.),
     MaxEta          = cms.untracked.vdouble( 9999.,  9999.)
@@ -345,9 +350,9 @@ process.jpsifiltermumu = cms.EDFilter(
 
 #process.ProductionFilterSequence = cms.Sequence(process.generator * process.bufilter * process.decayfilterpositiveleg * process.jpsifilter)
 
-process.ProductionFilterSequence = cms.Sequence(process.generator *process.jpsifilter)# * process.jpsifilteree )
+process.ProductionFilterSequence = cms.Sequence(process.generator *process.bufilter)# * process.jpsifilteree )
 
-process.ProductionFilterSequenceadditional = cms.Sequence(process.generator * process.jpsifilteree)
+process.ProductionFilterSequenceadditional = cms.Sequence(process.generator * process.decayfilterpositiveleg)
 #process.ProductionFilterSequence = cms.Sequence(process.generator+process.genParticlesForFilter+~process.bctoefilter+process.emenrichingfilter)
 
 # Path and EndPath definitions

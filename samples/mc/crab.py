@@ -1,13 +1,13 @@
 from CRABClient.UserUtilities import config #, getUsernameFromSiteDB
 config = config()
 
-config.General.requestName = 'BtoXjpsillInclusivedecay20221504'
+config.General.requestName = 'BplusBminusMC20222205'
 config.General.transferLogs = False
 config.General.workArea = 'crab_privateMC'
 config.General.transferOutputs = True
 
 config.JobType.pluginName = 'PrivateMC'
-config.JobType.psetName = 'GS_CharmoniumbtojpsiKll.py'
+config.JobType.psetName = 'GS_BplusBminus.py'
 config.JobType.maxMemoryMB = 5000
 
 config.Data.inputDataset = ''
@@ -20,8 +20,8 @@ config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 
 config.Data.outLFNDirBase = '/store/user/jodedra/' + config.General.requestName
 config.Data.publication = True
-config.Data.outputDatasetTag = 'SPRING21'
-config.Site.storageSite = 'T2_CH_CSCS'
+config.Data.outputDatasetTag = 'SUMMER22'
+config.Site.storageSite = 'T2_UK_London_IC'
 #config.Site.ignoreGlobalBlacklist = True
 
-config.Data.outputPrimaryDataset = 'BtoXjpsillInclusivedecay20221504'
+config.Data.outputPrimaryDataset = 'BplusBminusMC20222205'
