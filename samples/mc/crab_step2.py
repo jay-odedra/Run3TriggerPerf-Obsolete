@@ -1,7 +1,7 @@
 from CRABClient.UserUtilities import config #, getUsernameFromSiteDB
 config = config()
 
-config.General.requestName = 'JpsiK_20222603_HLTRAW'
+config.General.requestName = 'BnoughtAntiBnought_20222205_HLTRAW'
 config.General.transferLogs = False
 
 config.JobType.pluginName = 'Analysis'
@@ -9,7 +9,7 @@ config.JobType.psetName = 'EGM-Run3Winter21DRMiniAOD-00021_1_cfg.py'
 config.JobType.maxMemoryMB = 4000
 #config.JobType.numCores = 4
 
-config.Data.inputDataset = '/BuToKJpsi_Toee_2021206/jodedra-winter21-d68537ecb0111c6d02d9d0fcc3a0a6d8/USER'
+config.Data.inputDataset = '/BnoughtAntiBnoughtMC20222205/jodedra-SUMMER22-08702ec9e8c567660657a53dd1a547a5/USER'
 config.Data.inputDBS = 'phys03'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 1
@@ -17,16 +17,16 @@ config.Data.unitsPerJob = 1
 
 config.Data.outLFNDirBase = '/store/user/jodedra/' + config.General.requestName #% (getUsernameFromSiteDB())
 config.Data.publication = True
-config.Data.outputDatasetTag = 'SPRING22_HLTRAW'
+config.Data.outputDatasetTag = 'SUMMER22_HLTRAW'
 #config.Site.storageSite = 'T3_CH_PSI'
-config.Site.storageSite = 'T2_CH_CSCS'
+config.Site.storageSite = 'T2_UK_London_IC'
 #config.Site.ignoreGlobalBlacklist = True
 #config.Data.ignoreLocality = True
 #config.Site.whitelist = ['T2_CH_*']
 #config.Site.blacklist = ['T2_US_Purdue']
 
 
-config.General.workArea = 'crab_HLTRAW26032022'
+config.General.workArea = 'crab_BnoughtAntiBnoughtHLTRAW20222205'
 
 #name = 'EphemeralZeroBias8'
 #name = 'ZeroBias10'
