@@ -14,7 +14,7 @@ hltGetConfiguration /users/swmukher/testv3/egm_ele5_open/V2 --setup /dev/CMSSW_1
 
 cmsRun hltdevpath.py    #just to check no errors
 ```
-usually you would have to copy hltdevpath.py to dir but my github repo has correct version included.
+usually you would have to copy hltdevpath.py to dir but this github repo has correct version included. The hltdevpath.py included in this repo has some extra code to make outputs work during crab jobs.
 
 ```bash
 git clone git@github.com:jay-odedra/Run3TriggerPerf-1.git
