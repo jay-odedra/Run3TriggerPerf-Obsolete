@@ -49,7 +49,11 @@ def fit_new(
   # Trigger and fitted variables
   variables = None
   mass = ROOT.RooRealVar(var,"Mass [GeV]",4.7,5.7)
-  weight = ROOT.RooRealVar("weight","Weight",0.,10.)
+  weight = ROOT.RooRealVar("weight_"+trigger,"Weight",0.,10.)
+  mass.setRange("full",4.7,5.7)
+  mass.setRange("left",4.7,4.9)
+  mass.setRange("right",5.5,5.7)
+
   if trigger != None and trigger != "":
     trg = ROOT.RooRealVar(trigger,"Trigger result",0.,1.)
     variables = ROOT.RooArgSet(mass,weight,trg)
@@ -61,6 +65,7 @@ def fit_new(
 
   # Build (and select) dataset
   dataset = ROOT.RooDataSet("dataset","dataset",tree,variables,"",weight.GetName())
+  dataset = dataset.reduce(CutRange="left,right")
   #dataset.Print()
     
   # Select subset of dataset (e.g. apply trigger requirement)
@@ -256,7 +261,7 @@ def fit_new(
   # Total (S+B) shape
   model = None
   if isMC==True:             model = ROOT.RooAddPdf("total", "total", ROOT.RooArgSet(signal_pdf))
-  elif add_part_bkgd==False: model = ROOT.RooAddPdf("total", "total", ROOT.RooArgSet(comb_pdf, signal_pdf))
+  elif add_part_bkgd==False: model = ROOT.RooAddPdf("total", "total", ROOT.RooArgSet(comb_pdf))#, signal_pdf))
   else:                      model = ROOT.RooAddPdf("total", "total", ROOT.RooArgSet(comb_pdf, signal_pdf, part_pdf))
   
   if verbose>2:
@@ -291,8 +296,11 @@ def fit_new(
     ROOT.RooFit.NumCPU(4, ROOT.kTRUE),
     ROOT.RooFit.Save(),
     ROOT.RooFit.Extended(),
-    ROOT.RooFit.PrintEvalErrors(-1 if verbose<1 else 0 if verbose<4 else 100)
+    ROOT.RooFit.PrintEvalErrors(-1 if verbose<1 else 0 if verbose<4 else 100),
+    Range="left,right"
       )
+
+  
   params = result.floatParsFinal()
 
   if ( write_signal_params==True or write_comb_params==True or write_part_params==True ) and trigger != None :
@@ -402,7 +410,7 @@ def fit_new(
     #else:                                       nbins =  25
     if   dataset_selected.sumEntries() > 2000: nbins = 100
     elif dataset_selected.sumEntries() >  500: nbins =  50
-    else:                                      nbins =  25
+    else:                                      nbins =  20
   
   # Plot residuals panel
   draw_residuals = True
@@ -440,6 +448,8 @@ def fit_new(
       ROOT.RooFit.FillColor(ROOT.kViolet+6),#1758),#color_exp),#index_exp),
       ROOT.RooFit.FillStyle(1004),
       ROOT.RooFit.Name("comb"),
+      ROOT.RooFit.VLines(),
+      Range="full", NormRange="left,right"
       )
   # Signal pdf
   model.plotOn(
@@ -450,6 +460,7 @@ def fit_new(
       ROOT.RooFit.FillColor(ROOT.kOrange+2),#1757),#color_sig),#index_sig),
       ROOT.RooFit.FillStyle(1004),
       ROOT.RooFit.Name("signal"),
+      Range="full", NormRange="left,right"
       )
 #  # Partially reco'ed pdf
   if isMC==False and add_part_bkgd==True:
@@ -462,6 +473,24 @@ def fit_new(
       ROOT.RooFit.FillStyle(1004),
       ROOT.RooFit.Name("part"),
       )
+  sigma = 2
+  lower = cb_mean.getVal() - sigma*cb_sigma.getVal()
+  upper = cb_mean.getVal() + sigma*cb_sigma.getVal()
+  print("lowerrrrr",lower)
+  print("uperrrrrr",upper)
+
+  mass.setRange("signal_window",lower,upper) 
+  model.plotOn(
+    frame_main,
+    #ROOT.RooFit.Components("comb_pdf"),
+    ROOT.RooFit.DrawOption("F"),
+    ROOT.RooFit.LineColor(ROOT.kAzure+5),
+    ROOT.RooFit.FillColor(ROOT.kRed),#1757),#color_sig),#index_sig),
+    ROOT.RooFit.FillStyle(1004),
+    ROOT.RooFit.Name("combasda"),
+    ROOT.RooFit.VLines(),
+    Range="signal_window"
+    )
 
     # Replot data to be on top?
   frame_main.GetXaxis().SetLabelSize(0.05)
@@ -537,14 +566,28 @@ def fit_new(
   ################################################################################
   # DIAGNOSTIC
 
-  sigma = 2.
-  lower = cb_mean.getVal() - sigma*cb_sigma.getVal()
-  upper = cb_mean.getVal() + sigma*cb_sigma.getVal()
-  mass.setRange("signal_window",lower,upper) 
- 
+#  sigma = 2
+#  lower = cb_mean.getVal() - sigma*cb_sigma.getVal()
+#  upper = cb_mean.getVal() + sigma*cb_sigma.getVal()
+#  print("lowerrrrr",lower)
+#  print("uperrrrrr",upper)
+#
+#  mass.setRange("signal_window",lower,upper) 
+#  model.plotOn(
+#    frame_main,
+#    #ROOT.RooFit.Components("comb_pdf"),
+#    ROOT.RooFit.DrawOption("F"),
+#    ROOT.RooFit.LineColor(ROOT.kAzure+5),
+#    ROOT.RooFit.FillColor(ROOT.kRed),#1757),#color_sig),#index_sig),
+#    ROOT.RooFit.FillStyle(3013),
+#    ROOT.RooFit.Name("combasda"),
+#    ROOT.RooFit.VLines(),
+#    Range="signal_window"
+#    )
   signal_window = signal_pdf.createIntegral(mass,ROOT.RooFit.NormSet(mass),ROOT.RooFit.Range("signal_window"))
   total_window = model.createIntegral(mass,ROOT.RooFit.NormSet(mass),ROOT.RooFit.Range("signal_window"))
-  
+  comb_window = comb_pdf.createIntegral(mass,ROOT.RooFit.NormSet(mass),ROOT.RooFit.Range("signal_window"))
+
   print()
   print(f"Original number of events processed: {dataset.sumEntries():.1f}")
   print(f"Selected number of events processed: {dataset_selected.sumEntries():.1f}")
@@ -556,7 +599,9 @@ def fit_new(
   total_frac = total_window.getVal()
   print(f"Fraction of signal within +/-{sigma:.0f} sigma window: {total_frac:.2f}")
   print(f"Signal yield within +/-{sigma:.0f} sigma window: {model.getVal():.1f}")
-
+  comb_frac = comb_window.getVal()
+  print(f"Fraction of signal within +/-{sigma:.0f} sigma window: {comb_frac:.2f}")
+  print(f"Signal yield within +/-{sigma:.0f} sigma window: {comb_num.getVal():.1f}")
   ################################################################################
   # LEGEND
   ylower = 0.63 if isMC==False else 0.73 if add_part_bkgd==True else 0.78
@@ -564,6 +609,8 @@ def fit_new(
 
   rounded_nearest = int(signal_num.getVal())
   signal = f"{rounded_nearest:.0f}"
+  rounded_nearestcomb = int(comb_num.getVal()*comb_frac)
+  comb = f"{rounded_nearestcomb:.0f}"
 #  soverb = str( ( signal_window.getVal() * signal_num.getVal() ) / math.sqrt( total_window.getVal() * dataset.sumEntries() ) )
 #  soberb = str( ( signal_window.getVal() * signal_num.getVal() ) / ( total_window.getVal() * dataset.sumEntries() - signal_window.getVal() * signal_num.getVal() ) )
 
@@ -598,7 +645,7 @@ def fit_new(
   if isMC==False:
     #legend.AddEntry("part", "Bkgd (part.)"+str(dataset_selected.sumEntries()), "f")
     if add_part_bkgd==True: legend.AddEntry("part", "Bkgd (part.)", "f")
-    legend.AddEntry("comb", "Bkgd (comb.)", "f")
+    legend.AddEntry("comb", "Bkgd (comb."+comb+")", "f")
   legend.Draw()
 
   # Save canvas
@@ -639,27 +686,32 @@ if __name__ == "__main__":
 
     # Sample being considered
     samples = [
-        "BuToKJpsi_Toee",
-        "BuToKPsi2S_Toee",
-        "BuToKee",
+        #"BuToKJpsi_Toee",
+        #"BuToKPsi2S_Toee",
+        #"BuToKee",
         "Run2022_Jpsi",
         "Run2022_Psi2S",
         "Run2022_LowQ2",
         ]
 
     triggers = [
-        "",
-        "trigger_OR",
-        "L1_11p0_HLT_6p5",
-        "L1_10p5_HLT_6p5",
-        "L1_10p5_HLT_5p0",
-        "L1_8p5_HLT_5p0",
-        "L1_8p0_HLT_5p0",
-        "L1_7p0_HLT_5p0",
-        "L1_6p5_HLT_4p5",
-        "L1_6p0_HLT_4p0",
-        "L1_5p5_HLT_6p0",
+#        "",
+#        "trigger_OR",
+#        "L1_11p0_HLT_6p5",
+#        "L1_10p5_HLT_6p5",
+#        "L1_10p5_HLT_5p0",
+#        "L1_9p0_HLT_6p0",
+#        "L1_8p5_HLT_5p5",
+#        "L1_8p5_HLT_5p0",
+#        "L1_8p0_HLT_5p0",
+#        "L1_7p5_HLT_5p0",
+#        "L1_7p0_HLT_5p0",
+#        "L1_6p5_HLT_4p5",
+#        "L1_6p0_HLT_4p0",
+#        "L1_5p5_HLT_6p0",
         "L1_5p5_HLT_4p0",
+#        "L1_5p0_HLT_4p0",
+#        "L1_4p5_HLT_4p0",
         #"HLT_DoubleEle6p5",
         #"HLT_DoubleEle5p0",
         #"HLT_DoubleEle4p5",
@@ -693,16 +745,16 @@ if __name__ == "__main__":
                 trigger=_trigger,
                 var=_var,
                 verbose=5,
-                read_signal_params= True,
-                write_signal_params=False, # Just update signal_num
-                fix_signal_params=  True,
-                read_comb_params=   True,
-                write_comb_params=  False, # Just update comb_num
-                fix_comb_params=    True,
+                read_signal_params= False,
+                write_signal_params= False, # Just update signal_num
+                fix_signal_params=  False,
+                read_comb_params=   False,
+                write_comb_params=  True, # Just update comb_num
+                fix_comb_params=    False,
                 add_part_bkgd=      False,
-                read_part_params=   True,
+                read_part_params=   False,
                 write_part_params=  False, # Just update part_num
-                fix_part_params=    True,
+                fix_part_params=    False,
                 )
 
     print("Finished...")
